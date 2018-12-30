@@ -1,0 +1,37 @@
+.header__title h1 {
+    font-size: $header-font;
+    color: $near-black;
+    padding-top: $header-padding-size;
+    padding-left: $xl-size;
+    margin: $l-size;
+    margin-top: $xl-size;
+    margin-bottom: 0;
+}
+
+.header__subtitle {
+    display: flex;
+    justify-content: right;
+    flex: 1;
+}
+
+.header__subtitle h2 {
+    font-size: $xl-font;
+    color: $dark-grey;
+    padding-right: $xl-size;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+span {
+    color: $accent-color;
+    font-weight: bold;
+}
+
+.header {
+    padding-top: $xl-size;
+    background-image: url('/img/headerimage.png');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: baseline;
+    font-family: "Courier New";
+}

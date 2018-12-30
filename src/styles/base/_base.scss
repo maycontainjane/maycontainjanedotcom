@@ -1,14 +1,28 @@
 html {
     font-size: 62.5%;
+    //height: 100%;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: $m-size;
+    font-family: $serif;
+    font-size: $s-size;
+    background-image: linear-gradient(#AAA4F4, #A2D1FC);
+   //height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a:visited {
+   color: inherit;
 }
 
 button {
     cursor: pointer;
+    background-color: transparent;
+    font-family: Courier;
+    color: $light-grey;
+    border: 5px solid $light-grey;
+    padding: $xs-size;
 }
 
 button:disabled {

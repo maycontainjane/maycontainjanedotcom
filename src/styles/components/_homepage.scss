@@ -1,0 +1,42 @@
+.homepage__body { 
+    display: flex;
+}
+
+.homepage__body div {
+    padding: $xl-size;
+}
+
+.homepage__body img {
+    border: 5px solid $light-grey;
+    border-radius: $xs-size;
+}
+
+.homepage__body-text {
+    color: $light-grey;
+    font-size: $m-font;
+}
+
+.homepage__body-lists {
+    display: flex;
+    padding: 0 !important;
+}
+
+.homepage__body-lists ul {
+    padding: 0 $m-size;
+}
+
+.homepage__body h3 {
+    color: $near-black;
+    size: $l-font;
+    text-decoration: underline;
+    font-family: Courier;
+    margin-bottom: 0;
+}
+
+.homepage__body a {
+    background: $accent-color;
+}
+
+.homepage__body a:hover {
+    background: $light-grey;
+}

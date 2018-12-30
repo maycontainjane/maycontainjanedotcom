@@ -1,0 +1,50 @@
+.contactpage__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactpage__form h3 {
+    color: $near-black;
+    font-size: $l-font;
+    text-align: center;
+    text-decoration: underline;
+    font-family: Courier;
+    margin-bottom: $s-size;
+}
+
+.contactpage__buttons {
+    padding: 0 $contact-padding-size;
+    padding-top: $l-size;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactpage__buttons button {
+    width: 25rem;
+    height: $xl-size;
+}
+
+.contactpage__form, .contactpage__form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+form input, form textarea {
+    padding: $s-size;
+    margin: $xs-size $xxl-size;
+    border: 5px solid $light-grey;
+    border-radius: $xs-size;
+    display: flex;
+    justify-content: flex-end;
+}
+
+form button {
+    float: right;
+    padding: $s-size;
+    margin: $xs-size $xxl-size;
+    width: 25rem;
+    height: $xl-size;
+}
+
+
