@@ -28,7 +28,7 @@
     padding-right: $m-size;
 }
 
-.nav__links a:hover, .nav__active-link {
+.nav__links a:hover, .nav__active-link, .nav__scroll {
     text-decoration: none;
     background-image: linear-gradient(to right, #A2D1FC 100%, transparent 100%);
     background-position: 0 1.75em;

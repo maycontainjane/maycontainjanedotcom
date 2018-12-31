@@ -11,19 +11,11 @@ import Footer from './components/Footer';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
-var scrollHeights = {}
-
 class PortfolioSite extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
         this.scrollToRoute(window.location.pathname);
-        scrollHeights = {
-            homePage: document.getElementById("/").scrollHeight,
-            aboutPage: document.getElementById("/me").scrollHeight,
-            resumePage: document.getElementById("/resume").scrollHeight,
-            contactPage: document.getElementById("/contact").scrollHeight
-        }
     }
 
     componentDidUpdate() {
@@ -33,24 +25,30 @@ class PortfolioSite extends React.Component {
     scrollToRoute (location) {
         var element = document.getElementById(location.toString());
         element.scrollIntoView({behavior: "smooth"});
-    };
+    }
 
-    handleScroll () {
-        console.log(document.scrollingElement.scrollTop);
-        /*if (document.scrollingElement.scrollTop === scrollHeights.homePage) {
-            document.getElementById("homepage-id").setAttribute("activeClassName", "nav__active-link");
+    handleScroll() {
+        // console.log(parseInt(document.scrollingElement.scrollTop), parseInt(document.getElementById("/resume").offsetTop));
+        // const locations = ["/", "/råesume", "/me", "/contact"];
+        // locations.forEach((loc) => {
+        //     if (parseInt(document.scrollingElement.scrollTop)+15 >= parseInt(document.getElementById("/resume").offsetTop) >= parseInt(document.scrollingElement.scrollTop)-15) {
+        //         console.log("MATCH");
+        //         jQuery("a").removeClass("nav__active-link");
+        //         jQuery("[href=\""+loc+"\"").addClass("nav__active-link");
+        //     }
+        // });
+        var scrolls = {
+            home: [document.getElementById("/").offsetTop, document.getElementById("/").offsetHeight+document.getElementById("/").offsetTop],
+            resume: [document.getElementById("/resume").offsetTop, document.getElementById("/resume").offsetHeight+document.getElementById("/resume").offsetTop],
+            me: [document.getElementById("/me").offsetTop, document.getElementById("/me").offsetHeight+document.getElementById("/me").offsetTop],
+            contact: [document.getElementById("/contact").offsetTop, document.getElementById("/contact").offsetHeight+document.getElementById("/contact").offsetTop]
+        };
+        for (var scroll in scrolls) {
+            if (scrolls[scroll][0] <  document.scrollingElement.scrollTop && document.scrollingElement.scrollTop < scrolls[scroll][1]) {
+                jQuery(".nav__links a").removeClass();
+                jQuery("[href='/"+(scroll === 'home' ? '' : scroll)+"']").addClass("nav__scroll");
+            }
         }
-        else if (document.scrollingElement.scrollTop === scrollHeights.aboutPage) {
-            document.getElementById("aboutpage-id").setAttribute("activeClassName", "nav__active-link");
-        }
-        else if (document.scrollingElement.scrollTop === scrollHeights.resumePage) { 
-            console.log("match!");
-           
-            document.getElementById("resumepage-id").setAttribute("activeClassName", "nav__active-link");
-        }
-        else if (document.scrollingElement.scrollTop === scrollHeights.contactPage) {
-            document.getElementById("contactpage-id").setAttribute("activeClassName", "nav__active-link");
-        }*/
     }
 
     render = () => (

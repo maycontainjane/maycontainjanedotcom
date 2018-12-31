@@ -2,7 +2,7 @@ import React from "react";
 import Header from './Header';
 
 const ContactPage = () => (
-    <div  id="/contact" className="contactpage">
+    <div id="/contact" className="contactpage">
         <Header title="Contact" subtitle="Get in touch."/>
         <div className="contactpage__body">
             <div className="contactpage__buttons">
