@@ -2,6 +2,7 @@
     display: flex;
     font-family: $sans-serif;
     position: fixed;
+    top: 0;
     background-color: #AAA4F4;
     width: 100%;
 }
@@ -30,6 +31,7 @@
 
 .nav__links a:hover, .nav__active-link, .nav__scroll {
     text-decoration: none;
+    color: $off-white;
     background-image: linear-gradient(to right, #A2D1FC 100%, transparent 100%);
     background-position: 0 1.75em;
     background-repeat: repeat-x;
@@ -38,5 +40,15 @@
 
 .nav__active-link {
     font-weight: 600;
-    color: white;
+    color: $off-white;
+}
+
+.nav__shadow {
+    align-items: flex-end;
+    background: $dark-grey;
+    height: $xs-size;
+    width: 100%;
+    position: absolute;
+    opacity: 0.15;
+    top: $nav-shadow-padding-size;
 }

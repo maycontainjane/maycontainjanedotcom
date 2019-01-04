@@ -1,15 +1,15 @@
 .contactpage__body {
     display: flex;
     flex-direction: column;
+    margin-bottom: $xl-size;
 }
 
-.contactpage__form h3 {
-    color: $near-black;
-    font-size: $l-font;
-    text-align: center;
-    text-decoration: underline;
-    font-family: Courier;
-    margin-bottom: $s-size;
+.contactpage a {
+    text-decoration: none;
+}
+
+.contactpage a:visited {
+    color: $light-grey;
 }
 
 .contactpage__buttons {
@@ -30,6 +30,14 @@
     justify-content: center;
 } 
 
+.contactpage__form h3 {
+    color: $near-black;
+    font-size: $l-font;
+    text-align: center;
+    text-decoration: underline dashed;
+    font-family: $sans-serif;
+}
+
 form input, form textarea {
     padding: $s-size;
     margin: $xs-size $xxl-size;
@@ -43,8 +51,6 @@ form button {
     float: right;
     padding: $s-size;
     margin: $xs-size $xxl-size;
-    width: 25rem;
-    height: $xl-size;
 }
 
 

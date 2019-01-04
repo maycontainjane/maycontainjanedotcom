@@ -1,0 +1,169 @@
+[{
+    "title": "python",
+    "skill_level": 8.5,
+    "categories": ["languages"]
+}, {
+    "title": "bash",
+    "skill_level": 7,
+    "categories": ["devops", "languages"]
+}, {
+    "title": "C",
+    "skill_level": 7.5,
+    "categories": ["languages"]
+}, {
+    "title": "Django",
+    "skill_level": 7,
+    "categories": ["web dev"]
+}, {
+    "title": "Scrum",
+    "skill_level": 8.2,
+    "categories": []
+}, {
+    "title": "Angular.js",
+    "skill_level": 7.5,
+    "categories": ["web dev"]
+}, {
+    "title": "HTML5",
+    "skill_level": 9.6,
+    "categories": ["languages", "web dev"]
+}, {
+    "title": "CSS/SCSS",
+    "skill_level": 7.7,
+    "categories": ["languages", "web dev"]
+}, {
+    "title": "JavaScript",
+    "skill_level": 8.8,
+    "categories": ["languages", "web dev"]
+}, {
+    "title": "REST APIs",
+    "skill_level": 6.7,
+    "categories": ["web dev", "data"]
+}, {
+    "title": "Ubuntu",
+    "skill_level": 7,
+    "categories": ["OS"]
+}, {
+    "title": "SUSE",
+    "skill_level": 5.7,
+    "categories": ["OS"]
+}, {
+    "title": "CentOS",
+    "skill_level": 4.5,
+    "categories": ["OS"]
+}, {
+    "title": "MacOS",
+    "skill_level": 7.7,
+    "categories": ["OS"]
+}, {
+    "title": "object oriented programming",
+    "skill_level": 6.7,
+    "categories": []
+}, {
+    "title": "Git",
+    "skill_level": 8,
+    "categories": []
+}, {
+    "title": "Jenkins/Cloudbees",
+    "skill_level": 7.7,
+    "categories": ["devops"]
+}, {
+    "title": "test automation/CT",
+    "skill_level": 6.5,
+    "categories": ["devops"]
+}, {
+    "title": "C++",
+    "skill_level": 5,
+    "categories": ["languages"]
+}, {
+    "title": "Java",
+    "skill_level": 3.7,
+    "categories": ["languages"]
+}, {
+    "title": "Docker",
+    "skill_level": 4,
+    "categories": ["devops"]
+}, {
+    "title": "Windows 7",
+    "skill_level": 7.4,
+    "categories": ["OS"]
+}, {
+    "title": "Windows 8",
+    "skill_level": 8,
+    "categories": ["OS"]
+}, {
+    "title": "Windows 8.1",
+    "skill_level": 5.4,
+    "categories": ["OS"]
+}, {
+    "title": "Windows 10",
+    "skill_level": 8.7,
+    "categories": ["OS"]
+}, {
+    "title": "PHP",
+    "skill_level": 6.7,
+    "categories": ["languages", "web dev"]
+}, {
+    "title": "Node.js",
+    "skill_level": 7,
+    "categories": ["web dev"]
+}, {
+    "title": "mySQL",
+    "skill_level": 5,
+    "categories": ["data"]
+}, {
+    "title": "SQLite",
+    "skill_level": 6.4,
+    "categories": ["data"]
+}, {
+    "title": "MongoDB",
+    "skill_level": 5.7,
+    "categories": ["data"]
+}, {
+    "title": "Pycharm",
+    "skill_level": 6,
+    "categories": []
+}, {
+    "title": "Eclipse",
+    "skill_level": 4.7,
+    "categories": []
+}, {
+    "title": "Visual Studio",
+    "skill_level": 4,
+    "categories": []
+}, {
+    "title": "VS Code",
+    "skill_level": 6.4,
+    "categories": []
+}, {
+    "title": "software integration",
+    "skill_level": 6,
+    "categories": []
+}, {
+    "title": "VirtualBox",
+    "skill_level": 5,
+    "categories": ["devops"]
+}, {
+    "title": "TCP/IP",
+    "skill_level": 3.7,
+    "categories": []
+}, {
+    "title": "C#",
+    "skill_level": 3,
+    "categories": ["languages"]
+}, {
+    "title": "Windows Powershell",
+    "skill_level": 2.7,
+    "categories": []
+}, {
+    "title": "Ansible",
+    "skill_level": 4.4,
+    "categories": ["devops"]
+}, {
+    "title": "Heroku",
+    "skill_level": 4,
+    "categories": ["web dev"]
+}, {
+    "title": "microcontroller programming",
+    "skill_level": 3.4,
+    "categories": []
+}]

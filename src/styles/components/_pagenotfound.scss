@@ -1,0 +1,21 @@
+.pagenotfound {
+    padding-top: $xl-size;
+    margin: $xs-size $xxl-size;
+}
+
+.pagenotfound a {
+    text-decoration: none;
+}
+
+.pagenotfound h3 {
+    font-family: $sans-serif;
+    font-size: $xl-font;
+}
+
+.pagenotfound p {
+    font-size: $s-font;
+}
+
+.pagenotfound button {
+    width: auto;
+}

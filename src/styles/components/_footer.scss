@@ -1,0 +1,12 @@
+.footer {
+    //width: 100%;
+    text-align: center;
+    // need some of the sweet opacity so it's in RGB, but this is really $dark-grey
+    background-color: rgba(66, 66, 77, 0.2);
+    padding: $xs-size;
+}
+
+.footer p {
+    font-family: $sans-serif;
+    margin: 0;
+}

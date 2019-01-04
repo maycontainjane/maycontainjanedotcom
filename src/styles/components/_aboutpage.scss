@@ -1,0 +1,42 @@
+.aboutpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: $l-size;
+}
+
+.aboutitem {
+    display: flex;
+}
+
+.aboutitem img {
+    width: 100px;
+    padding: $s-size;
+}
+
+.aboutpage__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.aboutitem__info {
+    display: flex;
+    flex-direction: column;
+    padding-right: $m-size;
+    width: $desktop-breakpoint;
+}
+
+.aboutitem__text {
+    color: $near-black;
+    font-size: $s-font;
+    font-family: $sans-serif;
+    margin-bottom: 0;
+    margin-left: $s-size;
+}
+
+.aboutitem__subtext {
+    color: $light-grey;
+    font-size: $s-font;
+    margin: $s-size;
+}

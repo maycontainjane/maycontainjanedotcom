@@ -8,6 +8,12 @@
     margin-bottom: 0;
 }
 
+.header__container {
+    display: flex;
+    //height: 12.5rem;
+    width: 100%;
+}
+
 .header__subtitle {
     display: flex;
     justify-content: right;
@@ -28,10 +34,20 @@ span {
 }
 
 .header {
-    padding-top: $xl-size;
-    background-image: url('/img/headerimage.png');
+    padding-top: $header-text-padding-size;
+    background-image: url('/img/bg/header.png');
     background-repeat: no-repeat;
     display: flex;
     align-items: baseline;
-    font-family: "Courier New";
+    font-family: $sans-serif;
+}
+
+.header__shadow {
+    background: $light-grey;
+    height: $s-size;
+    width: 100%;
+    opacity: 0.15;
+    position: relative;
+    margin-bottom: 10px;
+    top: -$header-shadow-padding-size;
 }

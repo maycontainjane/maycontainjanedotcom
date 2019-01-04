@@ -1,16 +1,15 @@
 // Colors
-/* Coolors Exported Palette - coolors.co/1f363d-40798c-922d50-501537-3c1b43 */
-
-/* RGB */
 $main-purple: #AAA4F4;
 $main-blue: #A2D1FC;
 $accent-color: #FD7FF2;
-$light-grey: #EFEFFD;
+$off-white: #f4f4ff;
+$light-grey: #e3e3f8;
 $near-black: #30313B;
-$dark-grey: #42424D;
-$medium-grey: #696978;
+$dark-grey: #454550;
+$medium-grey: #6c6c7a;
 
 // Spacing
+$xteeny-size: 0.2rem;
 $teeny-size: 0.4rem;
 $xs-size: 0.8rem;
 $s-size: 1.6rem;
@@ -18,9 +17,14 @@ $m-size: 3.2rem;
 $l-size: 4.8rem;
 $xl-size: 7.2rem;
 $xxl-size: 21.6rem;
+
 $desktop-breakpoint: 45rem;
+
 $header-padding-size: 5.7rem;
+$header-text-padding-size: 6.7rem;
 $contact-padding-size: 25rem;
+$nav-shadow-padding-size: 6.45rem;
+$header-shadow-padding-size: 1.45rem;
 
 // Font sizes
 $xs-font: 14pt;
@@ -28,8 +32,9 @@ $s-font: 16pt;
 $m-font: 20pt;
 $l-font: 24pt;
 $xl-font: 28pt;
+$xxl-font: 36pt;
 $header-font: 44pt;
 
 // Fonts
 $serif: Georgia;
-$sans-serif: Courier;
+$sans-serif: "Andale Mono";

@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.homepage__body div {
+.homepage__body-img,.homepage__body-text {
     padding: $xl-size;
 }
 
@@ -11,14 +11,20 @@
     border-radius: $xs-size;
 }
 
+// this is actually the div that contains the image, distinct from above
+.homepage__body-img {
+    padding-right: 0;
+    padding-left: $xl-size;
+    margin: 0 $l-size;
+}
+
 .homepage__body-text {
-    color: $light-grey;
     font-size: $m-font;
 }
 
 .homepage__body-lists {
     display: flex;
-    padding: 0 !important;
+    padding: 0;
 }
 
 .homepage__body-lists ul {
@@ -27,9 +33,9 @@
 
 .homepage__body h3 {
     color: $near-black;
-    size: $l-font;
-    text-decoration: underline;
-    font-family: Courier;
+    font-size: $l-font;
+    text-decoration: underline dashed;
+    font-family: $sans-serif;
     margin-bottom: 0;
 }
 
@@ -38,5 +44,6 @@
 }
 
 .homepage__body a:hover {
-    background: $light-grey;
+    color: $light-grey;
+    background: $main-blue;
 }

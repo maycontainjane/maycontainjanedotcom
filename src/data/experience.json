@@ -1,0 +1,54 @@
+[{
+    "position": "Software Test Engineer",
+    "company": { 
+        "name": "Cray Inc.", 
+        "href": "https://www.cray.com/" 
+    },
+    "start_date": "January 2015",
+    "end_date": "Present",
+    "work_experience": [
+        "Worked on feature and system testing using Python and Bash scripting in conjunction with internally developed testing harness",
+        "Participated in the development of internal Python-based testing tools and API interfaces",
+        "Worked on project management and process improvement efforts including research on and integration of new third-party tools",
+        "Mentored interns and assisted with interviews of new employees",
+        "Participated in new hardware validation and system testing efforts"
+    ]
+}, {
+    "position": "Software Engineering Intern",
+    "company": { 
+        "name": "Cray Inc.", 
+        "href": "https://www.cray.com/"
+    },
+    "start_date": "June 2015",
+    "end_date": "December 2015",
+    "work_experience": [
+        "Created an internal web application to display testing status for engineers and managers",
+        "Used Jenkins API and internal artifacts store interface to retrieve information",
+        "Used PHP backend with Angular-based frontend"
+    ]
+}, {
+    "position": "Software Engineering Intern",
+    "company": { 
+        "name": "Maverick Software Consulting", 
+        "href": "https://www.mavericksoftware.com/" 
+    },
+    "start_date": "November 2014",
+    "end_date": "May 2015",
+    "work_experience": [
+        "Software development position doing full-stack web development for Thompson Reuters",
+        "Used Eclipse IDE, Stylus and Coffeescript, Apache Server"
+    ]
+}, {
+    "position": "Technology Help Representative",
+    "company": { 
+        "name": "University of Minnesota IT", 
+        "href": "https://it.umn.edu/"
+    },
+    "start_date": "May 2014",
+    "end_date": "November 2014",
+    "work_experience": [
+        "Student IT position working phones, emails, and in-person walk-in location", 
+        "Taught end users to navigate computer systems", 
+        "Contributed to knowledge base articles"
+    ]
+}]
