@@ -1,6 +1,4 @@
 .contactpage__body {
-    display: flex;
-    flex-direction: column;
     margin-bottom: $xl-size;
 }
 
@@ -13,10 +11,6 @@
 }
 
 .contactpage__buttons {
-    padding: 0 $contact-padding-size;
-    padding-top: $l-size;
-    display: flex;
-    justify-content: space-around;
 }
 
 .contactpage__buttons button {
@@ -25,9 +19,6 @@
 }
 
 .contactpage__form, .contactpage__form form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 } 
 
 .contactpage__form h3 {
@@ -43,8 +34,6 @@ form input, form textarea {
     margin: $xs-size $xxl-size;
     border: 5px solid $light-grey;
     border-radius: $xs-size;
-    display: flex;
-    justify-content: flex-end;
 }
 
 form button {

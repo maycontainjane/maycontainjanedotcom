@@ -90,6 +90,9 @@
     background-size: 98% 98%;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: $s-size;
+    position: sticky;
+    top: $xl-size+$s-size;
 }
 
 .resumepage__scrollbar button {
@@ -170,4 +173,9 @@
     display: flex;
     justify-content: center;
     margin: $m-size 0;
+}
+
+.resumepage__anchor {
+    position: relative;
+    top: -$xl-size;
 }

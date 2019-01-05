@@ -35,10 +35,10 @@ class PortfolioSite extends React.Component {
         console.log(jQuery('#'+id+'_ul').attr('hidden'));
         if (jQuery('#'+id+'_ul').attr('hidden')) {
             jQuery('#'+id+'_ul').removeAttr('hidden');
-            jQuery('#'+id).html('collapse ^');
+            jQuery('#'+id).html('collapse responsibilities ^');
         } else {
             jQuery('#'+id+'_ul').attr("hidden", "hidden");
-            jQuery('#'+id).html('work responsiblities >');
+            jQuery('#'+id).html('show responsiblities >');
         }
         return false;
     }
@@ -62,19 +62,11 @@ class PortfolioSite extends React.Component {
                 history.pushState({}, "", "/"+(scroll === 'home' ? '' : scroll));
             }
         }
-
-        var docViewTop = jQuery(window).scrollTop();
-        var docViewBottom = docViewTop + jQuery(window).height();
-        var elemTop = jQuery(".resumepage").offset().top;
-        var elemBottom = elemTop + jQuery(".resumepage").height();
-        if ((docViewTop >= elemTop) && (docViewBottom <= elemBottom)) {
-            jQuery(".resumepage__scrollbar-container").css("margin-top", docViewTop-elemTop+"px");
-        }
     }
 
     scrollToResumeSection(e) {
         var id = e.target.innerHTML.replace(" ", "-");
-        document.getElementById(id).scrollIntoView({behavior: "smooth", block: 'start' });
+        document.getElementById(id).scrollIntoView({behavior: "smooth"});
     }
 
     render = () => (

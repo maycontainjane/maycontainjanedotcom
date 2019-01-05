@@ -3,7 +3,8 @@ import React from "react";
 import Header from './Header';
 
 const HomePage = () => (
-    <div  id="/" class="homepage">
+    <div id="/" class="homepage">
+        <div id="nav-space"></div>
         <Header title="Welcome!" subtitle={<div>Hi, I'm <span>Jane</span>. I write code.</div>} />
         <div className="homepage__body">
             <div className="homepage__body-img">

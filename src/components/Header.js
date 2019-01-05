@@ -10,7 +10,7 @@ const Header = (props) => (
                 <h2>{props.subtitle}</h2>
             </div>
         </div>
-        <div class="header__shadow"></div>
+        <div className="header__shadow"></div>
     </div>
 );
 

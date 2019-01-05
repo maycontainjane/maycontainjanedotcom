@@ -17,7 +17,8 @@ const ResumePage = (props) => (
                     </div>
                 </div>
                 <div className="resumepage__body">
-                    <h3 id="objective">Objective</h3>
+                    <div className="resumepage__anchor" id="objective"></div>
+                    <h3>Objective</h3>
                     <p id="resumepage__objective">
                         I am seeking a software engineering position where I can apply my 
                         knowledge of Agile development and passion for finding creative solutions 
@@ -25,7 +26,8 @@ const ResumePage = (props) => (
                         specialty in testing, scripting, and web development and a strong desire 
                         to learn new things.
                     </p> 
-                    <h3 id="skills">Skills</h3>
+                    <div className="resumepage__anchor" id="skills"></div>
+                    <h3>Skills</h3>
                     <div className="resumepage__skillbuttons">
                         <button id="resumepage__button-left">all</button>
                         <button>OS</button>
@@ -35,12 +37,16 @@ const ResumePage = (props) => (
                         <button id="resumepage__button-right">devops</button>
                     </div>
                     <div className="resumepage__skills">
-                        <div className="resumepage__fluent"><h5>fluent in</h5></div>
+                        <div className="resumepage__fluent">
+                            <h5>fluent in</h5>
+                            <div></div>
+                        </div>
                         <div className="resumepage__working"><h5>working knowledge</h5></div>
                         <div className="resumepage__exposed"><h5>exposed to</h5></div>
                     </div>
                     <div className="resumepage__experience">
-                        <h3 id="work-experience">Work Experience</h3>
+                        <div className="resumepage__anchor" id="work-experience"></div>
+                        <h3>Work Experience</h3>
                         {
                             props.work_experience.map((workexp) => {
                                 return (<WorkExperience 
@@ -58,20 +64,21 @@ const ResumePage = (props) => (
                         }           
                     </div>
                     <div className="resumepage__education">
-                            <h3 id="education">Education</h3>
-                            <h4>College</h4>
-                            <div className="resumepage__education-body">
-                                <p><span>Bachelor of Science - Computer Engineering</span></p>
-                                <p>University of Minnesota – Twin Cities</p>
-                                <p>Graduated Fall 2015</p>
-                            </div>
-                            <h4>Certification</h4>
-                            <div className="resumepage__education-body">
-                                <p><span>Professional Scrum Master I</span></p>
-                                <a href="https://www.scrum.org">Scrum.org</a>
-                                <p>November 2018</p>
-                            </div>
+                        <div className="resumepage__anchor" id="education"></div>
+                        <h3>Education</h3>
+                        <h4>College</h4>
+                        <div className="resumepage__education-body">
+                            <p><span>Bachelor of Science - Computer Engineering</span></p>
+                            <a href="https://twin-cities.umn.edu/">University of Minnesota – Twin Cities</a>
+                            <p>Graduated Fall 2015</p>
                         </div>
+                        <h4>Certification</h4>
+                        <div className="resumepage__education-body">
+                            <p><span>Professional Scrum Master I</span></p>
+                            <a href="https://www.scrum.org">Scrum.org</a>
+                            <p>November 2018</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="resumepage__downloadable">
