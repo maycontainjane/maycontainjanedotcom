@@ -63,11 +63,11 @@
     "skill_level": 8,
     "categories": []
 }, {
-    "title": "Jenkins/Cloudbees",
+    "title": "Jenkins / Cloudbees",
     "skill_level": 7.7,
     "categories": ["devops"]
 }, {
-    "title": "test automation/CT",
+    "title": "test automation / CT",
     "skill_level": 6.5,
     "categories": ["devops"]
 }, {

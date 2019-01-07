@@ -1,5 +1,7 @@
 .contactpage__body {
-    margin-bottom: $xl-size;
+    margin: $l-size 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .contactpage a {
@@ -11,15 +13,19 @@
 }
 
 .contactpage__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: $l-size $xxl-size*1.5;
 }
 
 .contactpage__buttons button {
     width: 25rem;
-    height: $xl-size;
 }
 
-.contactpage__form, .contactpage__form form {
-} 
+.contactpage__form {
+    display: flex;
+    flex-direction: column;
+}
 
 .contactpage__form h3 {
     color: $near-black;
@@ -29,17 +35,23 @@
     font-family: $sans-serif;
 }
 
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 form input, form textarea {
     padding: $s-size;
-    margin: $xs-size $xxl-size;
+    margin: $xs-size $xxl-size*1.5;
     border: 5px solid $light-grey;
     border-radius: $xs-size;
-}
+} 
 
 form button {
     float: right;
     padding: $s-size;
-    margin: $xs-size $xxl-size;
+    margin: $xs-size $xxl-size*1.5;
 }
 
 

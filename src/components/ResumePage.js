@@ -37,16 +37,41 @@ const ResumePage = (props) => (
                         <button id="resumepage__button-right">devops</button>
                     </div>
                     <div className="resumepage__skills">
-                        <div className="resumepage__fluent">
+                        <div className="resumepage_category resumepage__fluent">
                             <h5>fluent in</h5>
-                            <div></div>
+                            {
+                                props.skills.map((skill) => {
+                                    if (skill.skill_level > ((10/3)*2)) {
+                                        return (<div className="resumepage__skill" data-categories={skill.categories} title={skill.skill_level}>{skill.title}</div>);
+                                    }
+                                })
+                            }
                         </div>
-                        <div className="resumepage__working"><h5>working knowledge</h5></div>
-                        <div className="resumepage__exposed"><h5>exposed to</h5></div>
+                        <div className="resumepage_category resumepage__working">
+                            <h5>working knowledge</h5>
+                            {
+                                props.skills.map((skill) => {
+                                    if ((((10/3)*2) > skill.skill_level) && (skill.skill_level > (10/3))) {
+                                        return (<div className="resumepage__skill" data-categories={skill.categories} title={skill.skill_level}>{skill.title}</div>);
+                                    }
+                                })
+                            }
+                        </div>
+                        <div className="resumepage_category resumepage__exposed">
+                            <h5>exposed to</h5>
+                            {
+                                props.skills.map((skill) => {
+                                    if (skill.skill_level < (10/3)) {
+                                        return (<div className="resumepage__skill" data-categories={skill.categories} title={skill.skill_level}>{skill.title}</div>);
+                                    }
+                                })
+                            }
+                        </div>
                     </div>
                     <div className="resumepage__experience">
                         <div className="resumepage__anchor" id="work-experience"></div>
                         <h3>Work Experience</h3>
+                        <p className="resumepage__exp-link"><a href="" id="all" onClick={props.toggleExpandExperience}>Expand All</a></p>
                         {
                             props.work_experience.map((workexp) => {
                                 return (<WorkExperience 
@@ -95,7 +120,7 @@ const WorkExperience = (props) => (
         <p><a href={props.company_href}>{props.company_name}</a></p>
         <p><span>{props.start} - {props.end}</span></p>
         <p className="resumepage__exp-link"><a href="" id={props.start.replace(" ", "_")} onClick={props.toggleExpandExperience}>work responsibilities ></a></p>
-        <ul hidden id={props.start.replace(" ", "_")+"_ul"}>
+        <ul hidden className="resumepage__exp-ul" id={props.start.replace(" ", "_")+"_ul"}>
         { props.work_experience.map((exp) => {
             return (<li>{exp}</li>)
         }) }

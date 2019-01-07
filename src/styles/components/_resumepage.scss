@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: $xl-size 0;
 }
 
 .resumepage h2 {
@@ -168,6 +169,18 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.resumepage__skill {
+    border: 2px solid $light-grey;
+    border-radius: $xs-size;
+    padding: $s-size $teeny-size;
+    margin: $s-size;
+    text-align: center;
+    width: $xl-size*1.5;
+
+}
+
+// ========= other ========= //
 
 .resumepage__downloadresume {
     display: flex;

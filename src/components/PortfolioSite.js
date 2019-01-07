@@ -32,8 +32,16 @@ class PortfolioSite extends React.Component {
     toggleExpandExperience(e) {
         e.preventDefault();
         var id = e.target.id;
-        console.log(jQuery('#'+id+'_ul').attr('hidden'));
-        if (jQuery('#'+id+'_ul').attr('hidden')) {
+        if (id === "all") {
+            if (jQuery('#all').html() === "Expand All") {
+                jQuery('.resumepage__exp-ul').removeAttr('hidden');
+                jQuery('#all').html('Collapse All');
+            } else if (jQuery('#all').html() === "Collapse All") {
+                jQuery('.resumepage__exp-ul').attr('hidden', 'hidden');
+                jQuery('#all').html('Expand All');
+            }
+        }
+        else if (jQuery('#'+id+'_ul').attr('hidden')) {
             jQuery('#'+id+'_ul').removeAttr('hidden');
             jQuery('#'+id).html('collapse responsibilities ^');
         } else {
