@@ -1,35 +1,24 @@
-// ========= general page styling ========= //
+//orig: 213 lines
 
-.resumepage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: $xl-size 0;
+// ==================== general styling ==================== // 
+
+.resumepage__body {
+    padding: $xl-size $xl-size*2;
 }
 
-.resumepage h2 {
+.resumepage__body h2 {
     text-align: center;
     font-size: $l-font;
     color: $near-black;
-    text-decoration: underline;
+    text-decoration: underline dashed;
     font-family: $sans-serif;
     margin-bottom: 0;
-}
-
-.resumepage__body {
-    width: 60%;
-    margin: $s-size;
-}
-
-.resumepage__interactive {
-    display: flex;
-    justify-content: center;
 }
 
 .resumepage h3 {
     color: $dark-grey;
     font-size: $m-size;
-    margin-bottom: $xs-size;
+    margin-bottom: $s-size;
 }
 
 .resumepage h4 {
@@ -42,20 +31,11 @@
     color: $dark-grey;
     font-size: $s-font;
     margin: $s-size 0;
+    text-align: center;
 }
 
-.resumepage p, .resumepage a {
-    margin-bottom: 0;
-    margin-top: $teeny-size;
-    font-size: $xs-font;
-}
-
-.resumepage ul {
-    margin: $s-size 0;
-}
-
-.resumepage li {
-    padding: $teeny-size;
+.resumepage__experience p, .resumepage__education p {
+    margin: $teeny-size 0;
     font-size: $xs-font;
 }
 
@@ -63,34 +43,51 @@
     background-color: $accent-color;
 }
 
-.resumepage__exp-link a {
+.resumepage__experience-link a {
     background-color: transparent;// !important;
 }
 
-.resumepage span {
+.resumepage__body span {
     color: lighten($medium-grey, 5%);
     font-weight: 300;
 }
 
-#resumepage__objective {
+.resumepage__objective {
     font-size: $s-font;
 }
 
-// ========= scrollbar styling ========= //
-
-.resumepage__scrollbar {
-    display: flex;
-    flex-direction: column;
-    padding: $m-size;
+.resumepage__divider {
+    margin-left: 3px;
 }
+
+// ==================== interactive page display ==================== // 
+
+.resumepage__interactive {
+    display: flex;
+}
+
+.resumepage__interactive-body {
+    display: grid;
+}
+
+// ==================== scroller styling ==================== // 
 
 .resumepage__scrollbar-container {
     display: flex;
     flex-direction: column;
+    font-size: $xs-font;
+    padding-right: $m-size;
+}
+
+.resumepage__scrollbar {
+    display: flex;
+    flex-direction: column;
     background-image: url('/img/bg/button.png');
-    background-size: 98% 98%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    border: 5px solid $light-grey;
+    border-radius: $s-size;
     margin-top: $s-size;
     position: sticky;
     top: $xl-size+$s-size;
@@ -99,11 +96,10 @@
 .resumepage__scrollbar button {
     background: none;
     border: none;
-    border-right: 5px solid $light-grey;
-    border-left: 5px solid $light-grey;
     height: auto;
-    padding: $m-size $s-size;
+    padding: $s-size $s-size;
     font-size: $xs-font;
+    width: 17rem;
 }
 
 .resumepage__scrollbar button:hover {
@@ -111,35 +107,28 @@
     color: $main-purple;
 }
 
-#resumepage__button-top {
-    border-top: 5px solid $light-grey;
-    border-top-right-radius: $s-size;
-    border-top-left-radius: $s-size;
-}
-
-#resumepage__button-bottom {
-    border-bottom: 5px solid $light-grey;
-    border-bottom-right-radius: $s-size;
-    border-bottom-left-radius: $s-size;
+// anchor for scrollbar neads some space from top due to nav
+.resumepage__anchor {
+    position: relative;
+    top: -($xl-size);
 }
 
 // ========= skill button styling ========= //
 
 .resumepage__skillbuttons {
     display: flex;
-    padding: $xs-size;
-    justify-content: center;
+    justify-content: space-around;
     background-image: url('/img/bg/button.png');
-    background-size: 85% 57%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    border: 5px solid $light-grey;
+    border-radius: $s-size;
 }
 
 .resumepage__skillbuttons button {
     background: none;
     border: none;
-    border-top: 5px solid $light-grey;
-    border-bottom: 5px solid $light-grey;
     font-size: $xs-font;
     padding: $xs-size $m-size;
     width: auto;
@@ -151,44 +140,43 @@
     color: $main-purple;
 }
 
-#resumepage__button-left {
-    border-left: 5px solid $light-grey;
-    border-top-left-radius: $s-size;
-    border-bottom-left-radius: $s-size;
+ // ========= skills section styling ========= //
+
+.resumepage__skills-body {
+    display: grid;
+    grid-template-columns: 30% 5% 30% 5% 30%;
 }
 
-#resumepage__button-right {
-    border-right: 5px solid $light-grey;
-    border-top-right-radius: $s-size;
-    border-bottom-right-radius: $s-size;
+.resumepage__skills-list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
 }
 
-// ========= skills section styling ========= //
-
-.resumepage__skills {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.resumepage__skill {
-    border: 2px solid $light-grey;
+.resumepage__skills-item {
+    border: 3px solid $light-grey;
     border-radius: $xs-size;
-    padding: $s-size $teeny-size;
-    margin: $s-size;
+    font-size: 10pt;
+    font-family: $sans-serif;
+    color: white;
+    padding: $xs-size $teeny-size;
+    margin: $xs-size;
     text-align: center;
     width: $xl-size*1.5;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-// ========= other ========= //
+
+// ========= resume download section styling ========= //
 
 .resumepage__downloadresume {
     display: flex;
     justify-content: center;
-    margin: $m-size 0;
 }
 
-.resumepage__anchor {
-    position: relative;
-    top: -$xl-size;
+.resumepage__downloadresume button {
+    margin-top: $m-size;
 }

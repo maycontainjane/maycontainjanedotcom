@@ -1,9 +1,7 @@
 .homepage__body { 
-    display: flex;
-}
-
-.homepage__body-img,.homepage__body-text {
-    padding: $xl-size;
+    display: grid;
+    padding: $xl-size $xxl-size;
+    grid-template-columns: 300px 1fr;
 }
 
 .homepage__body img {
@@ -11,24 +9,8 @@
     border-radius: $xs-size;
 }
 
-// this is actually the div that contains the image, distinct from above
-.homepage__body-img {
-    padding-right: 0;
-    padding-left: $xl-size;
-    margin: 0 $l-size;
-}
-
 .homepage__body-text {
     font-size: $m-font;
-}
-
-.homepage__body-lists {
-    display: flex;
-    padding: 0;
-}
-
-.homepage__body-lists ul {
-    padding: 0 $m-size;
 }
 
 .homepage__body h3 {
@@ -39,11 +21,7 @@
     margin-bottom: 0;
 }
 
-.homepage__body a {
-    background: $accent-color;
-}
-
-.homepage__body a:hover {
-    color: $light-grey;
-    background: $main-blue;
+.homepage__body-lists {
+    display: flex;
+    justify-content: space-around;
 }

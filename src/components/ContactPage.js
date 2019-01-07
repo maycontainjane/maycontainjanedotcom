@@ -19,9 +19,9 @@ class ContactPage extends React.Component {
                     <a target="_blank" href="https://www.linkedin.com/in/janekagan/"><button>linkedin</button></a>
                     <a target="_blank" href="https://github.com/maycontainjane"><button>github</button></a>
                 </div>
-                <div className="contactpage__form">
-                    <h3>contact form</h3>
-                    <form target="_blank" id="contact-form" onSubmit={this.formSubmit}>
+                <div>
+                    <h3 className="contactpage__form-header">contact form</h3>
+                    <form className="contactpage__form" target="_blank" id="contact-form" onSubmit={this.formSubmit}>
                         <input name="email" placeholder="youremail@coolemailsite.com" type="text"/>
                         <textarea name="words" rows="15" placeholder="What are you looking for?" form="contact-form"/>
                         <div className="contactpage__form-send"><button>send</button></div>

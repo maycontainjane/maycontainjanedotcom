@@ -3,79 +3,126 @@ import React from "react";
 import Header from './Header';
 
 const ResumePage = (props) => (
-    <div id="/resume">
+    <div id="/resume" className="resumepage">
         <Header title="Resume" subtitle={<div>My <span>professional</span> experience.</div>}/>
-        <div className="resumepage">
+        <div className="resumepage__body">
             <h2>interactive resume</h2>
             <div className="resumepage__interactive">
-                <div className="resumepage__scrollbar">
-                    <div className="resumepage__scrollbar-container">
-                        <button onClick={props.scrollToResumeSection} id="resumepage__button-top">objective</button>
+                <div className="resumepage__scrollbar-container">
+                    <div className="resumepage__scrollbar">
+                        <button onClick={props.scrollToResumeSection}>objective</button>
                         <button onClick={props.scrollToResumeSection}>skills</button>
                         <button onClick={props.scrollToResumeSection}>work experience</button>
-                        <button onClick={props.scrollToResumeSection} id="resumepage__button-bottom">education</button>
+                        <button onClick={props.scrollToResumeSection}>education</button>
                     </div>
                 </div>
-                <div className="resumepage__body">
-                    <div className="resumepage__anchor" id="objective"></div>
-                    <h3>Objective</h3>
-                    <p id="resumepage__objective">
-                        I am seeking a software engineering position where I can apply my 
-                        knowledge of Agile development and passion for finding creative solutions 
-                        to technical problems. I carry 4 years of industry experience with a 
-                        specialty in testing, scripting, and web development and a strong desire 
-                        to learn new things.
-                    </p> 
-                    <div className="resumepage__anchor" id="skills"></div>
-                    <h3>Skills</h3>
-                    <div className="resumepage__skillbuttons">
-                        <button id="resumepage__button-left">all</button>
-                        <button>OS</button>
-                        <button>languages</button>
-                        <button>web dev</button>
-                        <button>data</button>
-                        <button id="resumepage__button-right">devops</button>
+                <div className="resumepage__interactive-body">
+
+                    <div className="resumepage__objective">
+                        <div className="resumepage__anchor" id="objective"></div>
+                        <h3>Objective</h3>
+                        <p className="resumepage__body-objective">
+                            I am seeking a software engineering position where I can apply my 
+                            knowledge of Agile development and passion for finding creative solutions 
+                            to technical problems. I carry 4 years of industry experience with a 
+                            specialty in testing, scripting, and web development and a strong desire 
+                            to learn new things.
+                        </p> 
                     </div>
+
                     <div className="resumepage__skills">
-                        <div className="resumepage_category resumepage__fluent">
-                            <h5>fluent in</h5>
-                            {
-                                props.skills.map((skill) => {
-                                    if (skill.skill_level > ((10/3)*2)) {
-                                        return (<div className="resumepage__skill" data-categories={skill.categories} title={skill.skill_level}>{skill.title}</div>);
-                                    }
-                                })
-                            }
+                        <div className="resumepage__anchor" id="skills"></div>
+                        <h3>Skills</h3>
+
+                        <div className="resumepage__skillbuttons">
+                            <button onClick={(e) => props.showSkill('all')}>all</button>
+                            <button onClick={(e) => props.showSkill('OS')}>OS</button>
+                            <button onClick={(e) => props.showSkill('languages')}>languages</button>
+                            <button onClick={(e) => props.showSkill('web dev')}>web dev</button>
+                            <button onClick={(e) => props.showSkill('data')}>data</button>
+                            <button onClick={(e) => props.showSkill('devops')}>devops</button>
                         </div>
-                        <div className="resumepage_category resumepage__working">
-                            <h5>working knowledge</h5>
-                            {
-                                props.skills.map((skill) => {
-                                    if ((((10/3)*2) > skill.skill_level) && (skill.skill_level > (10/3))) {
-                                        return (<div className="resumepage__skill" data-categories={skill.categories} title={skill.skill_level}>{skill.title}</div>);
-                                    }
-                                })
-                            }
+
+                        <div className="resumepage__skills-body">
+                            <div className="resumepage__skills-category">
+                                <h5>fluent in</h5>
+                                <div className="resumepage__skills-list">
+                                {
+                                    props.skills.map((skill) => {
+                                        if ((skill.skill_level >= ((10/3)*2))) {
+                                            if ((props.skillSelection === 'all') || (skill.categories.includes(props.skillSelection))) {
+                                                return (<div 
+                                                            className="resumepage__skills-item" 
+                                                            data-categories={skill.categories} 
+                                                            title={"skill level: "+skill.skill_level+"/10"}>
+                                                            {skill.title}
+                                                        </div>
+                                                );
+                                            }
+                                        }
+                                    })
+                                }
+                                </div>
+                            </div>
+
+                            <div className="resumepage__divider"></div>
+
+                            <div className="resumepage__skills-category">
+                                <h5>working knowledge</h5>
+                                <div className="resumepage__skills-list">
+                                {
+                                    props.skills.map((skill) => {
+                                        if ((((10/3)*2) > skill.skill_level) && (skill.skill_level >= (10/3))) {
+                                            console.log(props.skillSelection);
+                                            if ((props.skillSelection === 'all') || (skill.categories.includes(props.skillSelection))) {
+                                                return (<div 
+                                                            className="resumepage__skills-item" 
+                                                            data-categories={skill.categories} 
+                                                            title={"skill level: "+skill.skill_level+"/10"}>
+                                                            {skill.title}
+                                                        </div>
+                                                );
+                                            }
+                                        }
+                                    })
+                                }
+                                </div>
+                            </div>
+
+                            <div className="resumepage__divider"></div>
+
+                            <div className="resumepage__skills-category">
+                                <h5>exposed to</h5>
+                                <div className="resumepage__skills-list">
+                                {
+                                    props.skills.map((skill) => {
+                                        if ((skill.skill_level < (10/3))) {
+                                            console.log(props.skillSelection);
+                                            if ((props.skillSelection === 'all') || skill.categories.includes(props.skillSelection)) {
+                                                return (<div 
+                                                            className="resumepage__skills-item" 
+                                                            data-categories={skill.categories} 
+                                                            title={"skill level: "+skill.skill_level+"/10"}>
+                                                            {skill.title}
+                                                        </div>
+                                                );
+                                            }
+                                        }
+                                    })
+                                }
+                                </div>
+                            </div>
                         </div>
-                        <div className="resumepage_category resumepage__exposed">
-                            <h5>exposed to</h5>
-                            {
-                                props.skills.map((skill) => {
-                                    if (skill.skill_level < (10/3)) {
-                                        return (<div className="resumepage__skill" data-categories={skill.categories} title={skill.skill_level}>{skill.title}</div>);
-                                    }
-                                })
-                            }
-                        </div>
+
                     </div>
+                    
                     <div className="resumepage__experience">
                         <div className="resumepage__anchor" id="work-experience"></div>
                         <h3>Work Experience</h3>
-                        <p className="resumepage__exp-link"><a href="" id="all" onClick={props.toggleExpandExperience}>Expand All</a></p>
+                        <p className="resumepage__experience-link"><a href="" id="all" onClick={props.toggleExpandExperience}>Expand All</a></p>
                         {
                             props.work_experience.map((workexp) => {
                                 return (<WorkExperience 
-                                        className="resumepage_expitem" 
                                         position={workexp.position} 
                                         company_href={workexp.company.href}
                                         company_name={workexp.company.name} 
@@ -88,6 +135,7 @@ const ResumePage = (props) => (
                             })
                         }           
                     </div>
+                    
                     <div className="resumepage__education">
                         <div className="resumepage__anchor" id="education"></div>
                         <h3>Education</h3>
@@ -115,12 +163,12 @@ const ResumePage = (props) => (
 );
 
 const WorkExperience = (props) => (
-    <div className="resumepage__exp"> 
+    <div className="resumepage__experience-item"> 
         <h4>{props.position}</h4>
         <p><a href={props.company_href}>{props.company_name}</a></p>
         <p><span>{props.start} - {props.end}</span></p>
-        <p className="resumepage__exp-link"><a href="" id={props.start.replace(" ", "_")} onClick={props.toggleExpandExperience}>work responsibilities ></a></p>
-        <ul hidden className="resumepage__exp-ul" id={props.start.replace(" ", "_")+"_ul"}>
+        <p className="resumepage__experience-link"><a href="" id={props.start.replace(" ", "_")} onClick={props.toggleExpandExperience}>work responsibilities ></a></p>
+        <ul hidden className="resumepage__experience-ul" id={props.start.replace(" ", "_")+"_ul"}>
         { props.work_experience.map((exp) => {
             return (<li>{exp}</li>)
         }) }

@@ -5,10 +5,10 @@ import Header from './Header';
 const AboutPage = (props) => (
     <div id="/me" className="aboutpage">
         <Header title="About me" subtitle={<div>I don't <span>just</span> write code.</div>}/>
-        <div className="aboutpage__content">
+        <div className="aboutpage__body">
         {
             props.aboutitems.map((about) => {
-                return <AboutItem className="aboutpage__item" imgsrc={about.src} text={about.text} subtext={about.subtext}/>
+                return <AboutItem imgsrc={about.src} text={about.text} subtext={about.subtext}/>
             })
         }
         </div>
@@ -16,11 +16,11 @@ const AboutPage = (props) => (
 );
 
 const AboutItem = (props) => (
-    <div className="aboutitem">
-        <img className="aboutpage__icon" src={props.imgsrc} />
-        <div className="aboutitem__info">
-            <h3 className="aboutitem__text">{props.text}</h3>
-            <p className="aboutitem__subtext">{props.subtext}</p>
+    <div className="aboutpage__item">
+        <img className="aboutpage__item-icon" src={props.imgsrc} />
+        <div className="aboutpage__item-info">
+            <h3 className="aboutpage__item-text">{props.text}</h3>
+            <p className="aboutpage__item-subtext">{props.subtext}</p>
         </div>
     </div>
 );

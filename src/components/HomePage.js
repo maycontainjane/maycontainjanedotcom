@@ -13,7 +13,6 @@ const HomePage = () => (
             <div className="homepage__body-text">
                 <p className="homepage__body-p">I’m an engineer living in Minneapolis, Minnesota. I love solving 
                 problems with software and making the web ecosystem a more beautiful place.</p> 
-                <br/>
                 <h3>I'm best at:</h3>
                 <div className="homepage__body-lists">
                     <ul className="homepage__body-ol">

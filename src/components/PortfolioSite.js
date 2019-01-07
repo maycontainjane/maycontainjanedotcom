@@ -14,6 +14,10 @@ const skills_json = require('../data/skills.json');
 
 class PortfolioSite extends React.Component {
 
+    state = {
+        skillSelection: 'all'
+    };
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
         jQuery('.resumepage__link').click(this.toggleExpandExperience);
@@ -34,10 +38,10 @@ class PortfolioSite extends React.Component {
         var id = e.target.id;
         if (id === "all") {
             if (jQuery('#all').html() === "Expand All") {
-                jQuery('.resumepage__exp-ul').removeAttr('hidden');
+                jQuery('.resumepage__experience-ul').removeAttr('hidden');
                 jQuery('#all').html('Collapse All');
             } else if (jQuery('#all').html() === "Collapse All") {
-                jQuery('.resumepage__exp-ul').attr('hidden', 'hidden');
+                jQuery('.resumepage__experience-ul').attr('hidden', 'hidden');
                 jQuery('#all').html('Expand All');
             }
         }
@@ -77,11 +81,28 @@ class PortfolioSite extends React.Component {
         document.getElementById(id).scrollIntoView({behavior: "smooth"});
     }
 
+    showSkill(show) {
+        this.setState(() => ({skillSelection: show}));
+    }
+
+    showSkill = this.showSkill.bind(this);
+
+    componentDidUpdate() {
+        // no page refresh when updating state
+    }
+
     render = () => (
         <div id="portfoliosite">
             <div id="page-body">
                 <HomePage />
-                <ResumePage work_experience={experience_json} skills={skills_json} toggleExpandExperience={this.toggleExpandExperience} scrollToResumeSection={this.scrollToResumeSection}/>
+                <ResumePage 
+                    work_experience={experience_json} 
+                    skills={skills_json} 
+                    toggleExpandExperience={this.toggleExpandExperience} 
+                    scrollToResumeSection={this.scrollToResumeSection}
+                    showSkill={this.showSkill}
+                    skillSelection={this.state.skillSelection}
+                />
                 <AboutPage aboutitems={aboutitems_json}/>
                 <ContactPage/>
                 <Footer year={new Date().getFullYear()}/>

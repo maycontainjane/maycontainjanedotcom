@@ -1,9 +1,3 @@
-.contactpage__body {
-    margin: $l-size 0;
-    display: flex;
-    flex-direction: column;
-}
-
 .contactpage a {
     text-decoration: none;
 }
@@ -15,19 +9,16 @@
 .contactpage__buttons {
     display: flex;
     justify-content: space-evenly;
-    margin: $l-size $xxl-size*1.5;
+    margin-bottom: $l-size;
 }
 
-.contactpage__buttons button {
-    width: 25rem;
-}
-
-.contactpage__form {
+.contactpage__body {
+    padding: $xl-size $xxl-size;
     display: flex;
     flex-direction: column;
 }
 
-.contactpage__form h3 {
+.contactpage__form-header {
     color: $near-black;
     font-size: $l-font;
     text-align: center;
@@ -35,23 +26,22 @@
     font-family: $sans-serif;
 }
 
-#contact-form {
+.contactpage__form {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
-form input, form textarea {
-    padding: $s-size;
-    margin: $xs-size $xxl-size*1.5;
+.contactpage__form input, .contactpage__form textarea {
     border: 5px solid $light-grey;
     border-radius: $xs-size;
+    padding: $s-size;
 } 
 
-form button {
-    float: right;
-    padding: $s-size;
-    margin: $xs-size $xxl-size*1.5;
+.contactpage__form > * {
+    margin: $s-size $xl-size;
 }
 
-
+.contactpage__form-send {
+    display: flex;
+    justify-content: flex-end;
+}
