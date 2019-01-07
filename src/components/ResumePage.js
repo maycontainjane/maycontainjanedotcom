@@ -73,7 +73,6 @@ const ResumePage = (props) => (
                                 {
                                     props.skills.map((skill) => {
                                         if ((((10/3)*2) > skill.skill_level) && (skill.skill_level >= (10/3))) {
-                                            console.log(props.skillSelection);
                                             if ((props.skillSelection === 'all') || (skill.categories.includes(props.skillSelection))) {
                                                 return (<div 
                                                             className="resumepage__skills-item" 
@@ -97,7 +96,6 @@ const ResumePage = (props) => (
                                 {
                                     props.skills.map((skill) => {
                                         if ((skill.skill_level < (10/3))) {
-                                            console.log(props.skillSelection);
                                             if ((props.skillSelection === 'all') || skill.categories.includes(props.skillSelection)) {
                                                 return (<div 
                                                             className="resumepage__skills-item" 

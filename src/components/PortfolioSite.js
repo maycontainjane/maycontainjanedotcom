@@ -6,6 +6,7 @@ import Footer from './Footer';
 import HomePage from './HomePage';
 import Nav from './Nav';
 import ResumePage from './ResumePage';
+import { AST_False } from 'terser';
 
 const aboutitems_json = require('../data/about_items.json');
 
@@ -24,8 +25,10 @@ class PortfolioSite extends React.Component {
         this.scrollToRoute(window.location.pathname);
     }
 
-    componentDidUpdate() {
-        this.scrollToRoute(window.location.pathname);
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.skillSelection === this.state.skillSelection) {
+            this.scrollToRoute(window.location.pathname);
+        }
     }
 
     scrollToRoute (location) {
@@ -86,10 +89,6 @@ class PortfolioSite extends React.Component {
     }
 
     showSkill = this.showSkill.bind(this);
-
-    componentDidUpdate() {
-        // no page refresh when updating state
-    }
 
     render = () => (
         <div id="portfoliosite">
