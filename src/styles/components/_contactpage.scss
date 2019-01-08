@@ -45,3 +45,45 @@
     display: flex;
     justify-content: flex-end;
 }
+
+@media only screen and (min-width: 760px) and (max-width: 1200px) {
+    .contactpage__body {
+        padding: $m-size;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactpage__form > * {
+        margin: $xs-size $m-size;
+    }
+
+    .contactpage__buttons {
+        margin-bottom: $m-size;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .contactpage__body {
+        padding: $s-size;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactpage__form > * {
+        margin: $xs-size $m-size;
+    }
+
+    .contactpage__buttons {
+        flex-direction: column;
+        margin-bottom: $s-size;
+        text-align: center;
+    }
+
+    .contactpage__buttons button {
+        margin: $s-size;
+    }
+
+    .contactpage__form textarea {
+        height: $xxl-size;
+    }
+}
