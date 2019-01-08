@@ -87,12 +87,12 @@ span {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 760px) {
     .header__title h1 {
         font-size: $xl-font;
         position: static;
-        padding: $xs-size;
         margin: $m-size 0;
+        padding: 0 $xs-size;
     }
     
     .header__subtitle, .header__title {

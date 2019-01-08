@@ -120,6 +120,7 @@
     .nav__list ul {
         list-style-type: none;
         padding-left: 0;
+        background-color: $main-purple;
     }
 
     .nav__list ul li a {
@@ -145,7 +146,7 @@
         padding: $s-size $s-size;
     }
 
-    .nav__dropdown, li {
+    .nav__dropdown, .nav__list ul li {
         display: block;
         border: 5px solid rgba(69, 69, 80, 0.2);
         color: $dark-grey;
@@ -154,7 +155,7 @@
         width: 17rem;
     }
 
-    .nav__dropdown:hover, li:hover {
+    .nav__dropdown:hover, .nav__list ul li:hover {
         border: 5px solid $light-grey;
         color: $light-grey;
         background: none;
