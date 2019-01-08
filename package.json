@@ -19,6 +19,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^2.1.0",
+    "jquery-ui-dist": "^1.12.1",
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",
     "nodemailer": "^5.0.0",

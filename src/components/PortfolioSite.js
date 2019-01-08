@@ -6,89 +6,124 @@ import Footer from './Footer';
 import HomePage from './HomePage';
 import Nav from './Nav';
 import ResumePage from './ResumePage';
-import { AST_False } from 'terser';
 
+/* json files for populating the website */
 const aboutitems_json = require('../data/about_items.json');
-
 const experience_json = require('../data/experience.json');
 const skills_json = require('../data/skills.json');
 
 class PortfolioSite extends React.Component {
+    constructor(props) {
+        super(props);
+        this.showSkill = this.showSkill.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.scrollToRoute = this.scrollToRoute.bind(this);
+        this.elementIsInSight = this.elementIsInSight.bind(this);
+        this.toggleExpandExperience = this.toggleExpandExperience.bind(this);
+    }
 
     state = {
         skillSelection: 'all'
     };
 
+    //scrolls = {};
+    elements = ["/", "/resume", "/me", "/contact"];
+
+    /* fires when the page loads */
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
         jQuery('.resumepage__link').click(this.toggleExpandExperience);
         this.scrollToRoute(window.location.pathname);
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.skillSelection === this.state.skillSelection) {
-            this.scrollToRoute(window.location.pathname);
-        }
+    /* fires when any component updates */
+    componentDidUpdate() {
+        this.scrollToRoute(window.location.pathname);
     }
 
-    scrollToRoute (location) {
-        var element = document.getElementById(location.toString());
-        element.scrollIntoView({behavior: "smooth"});
-    }
+    /* opens and closes experience lists */
+    toggleExpandExperience(elem) {
+        elem.preventDefault();
 
-    toggleExpandExperience(e) {
-        e.preventDefault();
-        var id = e.target.id;
-        if (id === "all") {
+        var listId = "#"+elem.target.id+"_ul";
+        var linkId = "#"+elem.target.id;
+
+        /* Handles 'Expand All' Link */
+        if (elem.target.id === "all") {
             if (jQuery('#all').html() === "Expand All") {
                 jQuery('.resumepage__experience-ul').removeAttr('hidden');
+                jQuery('.resumepage__experience-link a').html('collapse responsibilities ^');
                 jQuery('#all').html('Collapse All');
             } else if (jQuery('#all').html() === "Collapse All") {
                 jQuery('.resumepage__experience-ul').attr('hidden', 'hidden');
+                jQuery('.resumepage__experience-link a').html('work responsibilities >');
                 jQuery('#all').html('Expand All');
             }
         }
-        else if (jQuery('#'+id+'_ul').attr('hidden')) {
-            jQuery('#'+id+'_ul').removeAttr('hidden');
-            jQuery('#'+id).html('collapse responsibilities ^');
-        } else {
-            jQuery('#'+id+'_ul').attr("hidden", "hidden");
-            jQuery('#'+id).html('show responsiblities >');
+        /* show hidden */
+        else if (jQuery(listId).attr('hidden')) {
+            jQuery(listId).removeAttr('hidden');
+            jQuery(linkId).html('collapse responsibilities ^');
+        } 
+        /* hide shown */
+        else {
+            jQuery(listId).attr("hidden", "hidden");
+            jQuery(linkId).html('work responsiblities >');
+        }
+        /* no action */
+        return false;
+    }
+
+    /* check if element is on screen */
+    elementIsInSight(elem_id) {
+        var adjustedScroll = document.scrollingElement.scrollTop + 75;
+        if ((document.getElementById(elem_id).offsetTop < adjustedScroll) && 
+            (document.getElementById(elem_id).offsetHeight+document.getElementById(elem_id).offsetTop) > adjustedScroll) {
+            return true;
         }
         return false;
     }
 
     handleScroll() {
-        /* adjust the highlighted link as the page is scrolled */
-        var scrolls = {
-            /* jQuery doesn't like '#/' so let's use document.getElementById */
-            home: [document.getElementById("/").offsetTop, document.getElementById("/").offsetHeight+document.getElementById("/").offsetTop],
-            resume: [document.getElementById("/resume").offsetTop, document.getElementById("/resume").offsetHeight+document.getElementById("/resume").offsetTop],
-            me: [document.getElementById("/me").offsetTop, document.getElementById("/me").offsetHeight+document.getElementById("/me").offsetTop],
-            contact: [document.getElementById("/contact").offsetTop, document.getElementById("/contact").offsetHeight+document.getElementById("/contact").offsetTop]
-        };
-        for (var scroll in scrolls) {
-            /* scrollTop is too low, add 75px easing for better transition during scroll movement */
-            var adjustedScroll = document.scrollingElement.scrollTop + 75;
-            if (scrolls[scroll][0] <  adjustedScroll && adjustedScroll < scrolls[scroll][1]) {
+        for (var elem in this.elements) {
+            var elem_id = this.elements[elem];
+            if (this.elementIsInSight(this.elements[elem])) {
                 jQuery(".nav__links a").removeClass();
-                jQuery("[href='/"+(scroll === 'home' ? '' : scroll)+"']").addClass("nav__scroll");
+                jQuery("[href='"+(elem_id === 'home' ? '' : elem_id)+"']").addClass("nav__scroll");
                 /* black magic that changes the url! */
-                history.pushState({}, "", "/"+(scroll === 'home' ? '' : scroll));
+                history.pushState({}, "/", (elem_id === 'home' ? '' : elem_id));
+                jQuery('.nav__dropdown').html((elem_id === '/' ? 'home' : elem_id).replace("/", "")+" >");
             }
         }
     }
 
-    scrollToResumeSection(e) {
-        var id = e.target.innerHTML.replace(" ", "-");
+    scrollToResumeSection(elem) {
+        jQuery('.resumepage__scrollbar button').removeClass('resumepage__button-active');
+        jQuery(elem.target).addClass('resumepage__button-active');
+        var id = elem.target.innerHTML.replace(" ", "-");
         document.getElementById(id).scrollIntoView({behavior: "smooth"});
     }
 
-    showSkill(show) {
+    showSkill(elem, show) {
+        jQuery('.resumepage__skillbuttons button').removeClass('resumepage__button-active');
+        jQuery(elem).addClass("resumepage__button-active");
         this.setState(() => ({skillSelection: show}));
     }
 
-    showSkill = this.showSkill.bind(this);
+    scrollToRoute(location) {
+        var elem = document.getElementById(location.toString());
+        if (!this.elementIsInSight(location)) {
+            elem.scrollIntoView({behavior: "smooth"});
+        }
+    }
+
+    selectMenu(e) {
+        if (jQuery('.nav__list').css('display') === 'none') {
+            jQuery('.nav__list').css('display', 'block');
+        } else {
+            jQuery('.nav__list').css('display', 'none'); 
+        }
+    }
 
     render = () => (
         <div id="portfoliosite">
@@ -107,7 +142,7 @@ class PortfolioSite extends React.Component {
                 <Footer year={new Date().getFullYear()}/>
             </div>
             {/*nav loaded last so it displays over everything else*/}
-            <Nav/>
+            <Nav selectMenu={this.selectMenu}/>
         </div>
     );
 }

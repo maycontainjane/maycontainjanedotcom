@@ -10,7 +10,7 @@ const ResumePage = (props) => (
             <div className="resumepage__interactive">
                 <div className="resumepage__scrollbar-container">
                     <div className="resumepage__scrollbar">
-                        <button onClick={props.scrollToResumeSection}>objective</button>
+                        <button class="resumepage__button-active" onClick={props.scrollToResumeSection}>objective</button>
                         <button onClick={props.scrollToResumeSection}>skills</button>
                         <button onClick={props.scrollToResumeSection}>work experience</button>
                         <button onClick={props.scrollToResumeSection}>education</button>
@@ -35,12 +35,12 @@ const ResumePage = (props) => (
                         <h3>Skills</h3>
 
                         <div className="resumepage__skillbuttons">
-                            <button onClick={(e) => props.showSkill('all')}>all</button>
-                            <button onClick={(e) => props.showSkill('OS')}>OS</button>
-                            <button onClick={(e) => props.showSkill('languages')}>languages</button>
-                            <button onClick={(e) => props.showSkill('web dev')}>web dev</button>
-                            <button onClick={(e) => props.showSkill('data')}>data</button>
-                            <button onClick={(e) => props.showSkill('devops')}>devops</button>
+                            <button className="resumepage__button-active" onClick={(e) => props.showSkill(e, 'all')}>all</button>
+                            <button onClick={(e) => props.showSkill(e, 'OS')}>OS</button>
+                            <button onClick={(e) => props.showSkill(e, 'languages')}>languages</button>
+                            <button onClick={(e) => props.showSkill(e, 'web dev')}>web dev</button>
+                            <button onClick={(e) => props.showSkill(e, 'data')}>data</button>
+                            <button onClick={(e) => props.showSkill(e, 'devops')}>devops</button>
                         </div>
 
                         <div className="resumepage__skills-body">
@@ -117,7 +117,7 @@ const ResumePage = (props) => (
                     <div className="resumepage__experience">
                         <div className="resumepage__anchor" id="work-experience"></div>
                         <h3>Work Experience</h3>
-                        <p className="resumepage__experience-link"><a href="" id="all" onClick={props.toggleExpandExperience}>Expand All</a></p>
+                        <p className="resumepage__experience-linkall"><a href="" id="all" onClick={props.toggleExpandExperience}>Expand All</a></p>
                         {
                             props.work_experience.map((workexp) => {
                                 return (<WorkExperience 
