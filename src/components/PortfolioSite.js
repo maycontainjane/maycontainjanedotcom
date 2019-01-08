@@ -97,7 +97,7 @@ class PortfolioSite extends React.Component {
                 /* black magic that changes the url! */
                 history.pushState({}, "/", (elem_id === 'home' ? '' : elem_id));
                 /* change name of section in mobile dropdown */
-                jQuery('.nav__dropdown').html((elem_id === '/' ? 'home' : elem_id).replace("/", "")+" >");
+                jQuery('.nav__dropdown').html(this.transformPath(elem_id)+" >");
             }
         }
         
@@ -140,14 +140,18 @@ class PortfolioSite extends React.Component {
     showNav(show) {
         if (show) {
             jQuery('.nav__list').css('display', 'block');
-            jQuery('.nav__dropdown').html('goto').css({"background-color": "rgba(69, 69, 80, 0.2)", "border": "5px solid rgba(69, 69, 80, 0.2)"});
+            jQuery('.nav__dropdown').html('goto &nbsp;&nbsp;&and;').css({"background-color": "rgba(69, 69, 80, 0.2)", "border": "5px solid rgba(69, 69, 80, 0.2)"});
         } else {
             jQuery('.nav__list').css('display', 'none'); 
-            jQuery('.nav__dropdown').html((window.location.pathname === "/") ? "home" : window.location.pathname.replace("/", "")+" >").css("background", "none");
+            jQuery('.nav__dropdown').html(this.transformPath(window.location.pathname)+" &or;").css("background", "none");
         }
         return false;
     }
 
+    /* change / to home, /me to me, etc */
+    transformPath(path) {
+        return (path === "/") ? "home" : path.replace("/", "");
+    }
 
     render = () => (
         <div id="portfoliosite">
@@ -166,7 +170,7 @@ class PortfolioSite extends React.Component {
                 <Footer year={new Date().getFullYear()}/>
             </div>
             {/*nav loaded last so it displays over everything else*/}
-            <Nav selectMenu={this.selectMenu}/>
+            <Nav selectMenu={this.selectMenu} transformPath={this.transformPath}/>
         </div>
     );
 }
