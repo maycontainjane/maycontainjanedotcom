@@ -30,7 +30,7 @@
 @media only screen and (min-width: 760px) and (max-width: 1200px) {
     .homepage__body { 
         display: grid;
-        padding: 0 $m-size;
+        padding: $m-size $m-size;
         grid-template-columns: 250px 1fr;
     }
 

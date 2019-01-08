@@ -12,6 +12,16 @@ const AboutPage = (props) => (
             })
         }
         </div>
+        <div className="aboutpage__oneitem">
+            <button onClick={props.selectAboutitem} className="aboutpage__nav aboutpage__back">&lt;</button>
+            {
+                <AboutItem 
+                    imgsrc={props.aboutitems[props.selectedAboutitem].src} 
+                    text={props.aboutitems[props.selectedAboutitem].text} 
+                    subtext={props.aboutitems[props.selectedAboutitem].subtext} />
+            }
+            <button onClick={props.selectAboutitem} className="aboutpage__nav aboutpage__next">&gt;</button>
+        </div>
     </div>
 );
 

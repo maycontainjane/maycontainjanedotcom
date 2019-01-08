@@ -21,12 +21,14 @@ class PortfolioSite extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
         this.scrollToRoute = this.scrollToRoute.bind(this);
+        this.selectAboutitem = this.selectAboutitem.bind(this);
         this.elementIsInSight = this.elementIsInSight.bind(this);
         this.toggleExpandExperience = this.toggleExpandExperience.bind(this);
     }
 
     state = {
-        skillSelection: 'all'
+        skillSelection: 'all',
+        selectedAboutitem: 0
     };
 
     //scrolls = {};
@@ -97,7 +99,7 @@ class PortfolioSite extends React.Component {
                 /* black magic that changes the url! */
                 history.pushState({}, "/", (elem_id === 'home' ? '' : elem_id));
                 /* change name of section in mobile dropdown */
-                jQuery('.nav__dropdown').html(this.transformPath(elem_id)+" >");
+                jQuery('.nav__dropdown').html(this.transformPath(elem_id)+" &or;");
             }
         }
         
@@ -153,6 +155,28 @@ class PortfolioSite extends React.Component {
         return (path === "/") ? "home" : path.replace("/", "");
     }
 
+    selectAboutitem(e) {
+        if (jQuery(e.target).hasClass('aboutpage__next')) {
+            this.setState((prevState) => {
+                if (prevState.selectedAboutitem === (aboutitems_json.length - 1)) {
+                    return {selectedAboutitem: 0};
+                }
+                else {
+                    return {selectedAboutitem: prevState.selectedAboutitem + 1};
+                }
+            });
+        } else {
+            this.setState((prevState) => {
+                if (prevState.selectAboutitem === 0) {
+                    return {selectedAboutitem: aboutitems_json.length - 1};
+                }
+                else {
+                    return {selectedAboutitem: prevState.selectedAboutitem - 1};
+                }
+            });
+        }
+    }
+
     render = () => (
         <div id="portfoliosite">
             <div id="page-body">
@@ -165,7 +189,11 @@ class PortfolioSite extends React.Component {
                     showSkill={this.showSkill}
                     skillSelection={this.state.skillSelection}
                 />
-                <AboutPage aboutitems={aboutitems_json}/>
+                <AboutPage 
+                    aboutitems={aboutitems_json}
+                    selectAboutitem={this.selectAboutitem}
+                    selectedAboutitem={this.state.selectedAboutitem}
+                />
                 <ContactPage/>
                 <Footer year={new Date().getFullYear()}/>
             </div>
