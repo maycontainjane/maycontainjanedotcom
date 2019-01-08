@@ -15,7 +15,10 @@ const skills_json = require('../data/skills.json');
 class PortfolioSite extends React.Component {
     constructor(props) {
         super(props);
+        this.showNav = this.showNav.bind(this);
         this.showSkill = this.showSkill.bind(this);
+        this.selectMenu = this.selectMenu.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
         this.scrollToRoute = this.scrollToRoute.bind(this);
         this.elementIsInSight = this.elementIsInSight.bind(this);
@@ -32,6 +35,7 @@ class PortfolioSite extends React.Component {
     /* fires when the page loads */
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('click', this.handleClick);
         jQuery('.resumepage__link').click(this.toggleExpandExperience);
         this.scrollToRoute(window.location.pathname);
     }
@@ -89,11 +93,19 @@ class PortfolioSite extends React.Component {
             var elem_id = this.elements[elem];
             if (this.elementIsInSight(this.elements[elem])) {
                 jQuery(".nav__links a").removeClass();
-                jQuery("[href='"+(elem_id === 'home' ? '' : elem_id)+"']").addClass("nav__scroll");
+                jQuery(".nav__links a[href='"+(elem_id === 'home' ? '' : elem_id)+"']").addClass("nav__scroll");
                 /* black magic that changes the url! */
                 history.pushState({}, "/", (elem_id === 'home' ? '' : elem_id));
+                /* change name of section in mobile dropdown */
                 jQuery('.nav__dropdown').html((elem_id === '/' ? 'home' : elem_id).replace("/", "")+" >");
             }
+        }
+        
+    }
+
+    handleClick(e) {
+        if (!jQuery(e.target).hasClass("nav__dropdown")) {
+            this.showNav(false);    
         }
     }
 
@@ -117,13 +129,25 @@ class PortfolioSite extends React.Component {
         }
     }
 
-    selectMenu(e) {
+    selectMenu() {
         if (jQuery('.nav__list').css('display') === 'none') {
-            jQuery('.nav__list').css('display', 'block');
+            this.showNav(true);
         } else {
-            jQuery('.nav__list').css('display', 'none'); 
+            this.showNav(false);
         }
     }
+
+    showNav(show) {
+        if (show) {
+            jQuery('.nav__list').css('display', 'block');
+            jQuery('.nav__dropdown').html('goto').css({"background-color": "rgba(69, 69, 80, 0.2)", "border": "5px solid rgba(69, 69, 80, 0.2)"});
+        } else {
+            jQuery('.nav__list').css('display', 'none'); 
+            jQuery('.nav__dropdown').html((window.location.pathname === "/") ? "home" : window.location.pathname.replace("/", "")+" >").css("background", "none");
+        }
+        return false;
+    }
+
 
     render = () => (
         <div id="portfoliosite">

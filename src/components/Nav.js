@@ -12,14 +12,16 @@ const Nav = (props) => (
             <NavLink to="/me" activeClassName="nav__active-link">about</NavLink>
             <NavLink to="/contact" activeClassName="nav__active-link">find me</NavLink>
             <div className="nav__dropdown-container mobile">
-                <button onClick={props.selectMenu} className="nav__dropdown">{(window.location.pathname === "/") ? "home" : window.location.pathname} &gt; </button>
-                <ul className="nav__list">
-                    <li className="nav__list-selected"><NavLink to="/" activeClassName="nav__active-link" exact={true}>home</NavLink></li>
-                    <li id="nav__resume"><NavLink to="/resume" activeClassName="nav__active-link">resume</NavLink></li>
-                    <li id="nav__me"><NavLink to="/me" activeClassName="nav__active-link">about</NavLink></li>
-                    <li id="nav__contact"><NavLink to="/contact" activeClassName="nav__active-link">find me</NavLink></li>
-                </ul>
+                <button onClick={props.selectMenu} className="nav__dropdown">{(window.location.pathname === "/") ? "home" : window.location.pathname.replace("/", "")} &gt; </button>
             </div>
+        </div>
+        <div className="nav__list">
+            <ul>
+                <li className="nav__list-selected"><NavLink to="/" activeClassName="nav__active-link" exact={true}>home</NavLink></li>
+                <li id="nav__resume"><NavLink to="/resume" activeClassName="nav__active-link">resume</NavLink></li>
+                <li id="nav__me"><NavLink to="/me" activeClassName="nav__active-link">about</NavLink></li>
+                <li id="nav__contact"><NavLink to="/contact" activeClassName="nav__active-link">find me</NavLink></li>
+            </ul>
         </div>
         <div className="nav__shadow">
         </div>
