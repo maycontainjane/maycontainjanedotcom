@@ -83,8 +83,10 @@ class PortfolioSite extends React.Component {
     /* check if element is on screen */
     elementIsInSight(elem_id) {
         var adjustedScroll = document.scrollingElement.scrollTop + 75;
-        if ((document.getElementById(elem_id).offsetTop < adjustedScroll) && 
-            (document.getElementById(elem_id).offsetHeight+document.getElementById(elem_id).offsetTop) > adjustedScroll) {
+        if (((document.getElementById(elem_id).offsetTop < adjustedScroll) && 
+            (document.getElementById(elem_id).offsetHeight+document.getElementById(elem_id).offsetTop) > adjustedScroll) ||
+            ((document.getElementById(elem_id).pageYOffset < adjustedScroll) && 
+            (document.getElementById(elem_id).offsetHeight+document.getElementById(elem_id).pageYOffset > adjustedScroll))) {
             return true;
         }
         return false;
