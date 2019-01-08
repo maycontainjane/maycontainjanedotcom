@@ -12,7 +12,7 @@ const Nav = (props) => (
             <NavLink to="/me" activeClassName="nav__active-link">about</NavLink>
             <NavLink to="/contact" activeClassName="nav__active-link">find me</NavLink>
             <div className="nav__dropdown-container mobile">
-                <button onClick={props.selectMenu} className="nav__dropdown">{(e) => props.transformPath(window.location.pathname)} &or; </button>
+                <button onClick={props.selectMenu} className="nav__dropdown">{props.transformPath(window.location.pathname)} &or; </button>
             </div>
         </div>
         <div className="nav__list">

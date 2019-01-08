@@ -55,3 +55,65 @@ span {
     height: 75px;
     background-color: white;
 }
+
+@media only screen and (min-width: 760px) and (max-width: 1200px) {
+    .header__subtitle, .header__title {
+        margin-top: $xl-size;
+        position: relative;
+        top: $teeny-size*1.2;
+    }
+
+    .header__title h1 {
+        font-size: $xxl-font;
+        padding: $xs-size;
+        margin: 0;
+        width: auto;
+    }
+    
+    .header__subtitle h2 {
+        font-size: $s-font;
+        padding: $xs-size;
+        position: relative;
+        margin: 0;
+        top: $xs-size*1.75;
+    }
+    
+    .header {
+        font-family: $sans-serif;
+    }
+    
+    #nav-space {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header__title h1 {
+        font-size: $xl-font;
+        position: static;
+        padding: $xs-size;
+        margin: $m-size 0;
+    }
+    
+    .header__subtitle, .header__title {
+        position: static;
+        flex-grow: 1;
+    }
+    
+    .header__subtitle h2 {
+        font-size: $xs-font;
+        padding: 0 $xs-size;
+        position: relative;
+        margin: 0;
+        top: $teeny-size*(1.2);
+    }
+    
+    .header {
+        flex-direction: column;
+        font-family: $sans-serif;
+    }
+    
+    #nav-space {
+        height: 100px;
+    }
+}

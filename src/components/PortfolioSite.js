@@ -140,7 +140,7 @@ class PortfolioSite extends React.Component {
     showNav(show) {
         if (show) {
             jQuery('.nav__list').css('display', 'block');
-            jQuery('.nav__dropdown').html('goto &nbsp;&nbsp;&and;').css({"background-color": "rgba(69, 69, 80, 0.2)", "border": "5px solid rgba(69, 69, 80, 0.2)"});
+            jQuery('.nav__dropdown').html('goto &and;').css({"background-color": "rgba(69, 69, 80, 0.2)", "border": "5px solid rgba(69, 69, 80, 0.2)"});
         } else {
             jQuery('.nav__list').css('display', 'none'); 
             jQuery('.nav__dropdown').html(this.transformPath(window.location.pathname)+" &or;").css("background", "none");
