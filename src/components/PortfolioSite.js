@@ -169,7 +169,7 @@ class PortfolioSite extends React.Component {
             });
         } else {
             this.setState((prevState) => {
-                if (prevState.selectAboutitem === 0) {
+                if (prevState.selectedAboutitem === 0) {
                     return {selectedAboutitem: aboutitems_json.length - 1};
                 }
                 else {
