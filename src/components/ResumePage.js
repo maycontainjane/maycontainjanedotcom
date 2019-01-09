@@ -16,6 +16,12 @@ const ResumePage = (props) => (
                         <button onClick={props.scrollToResumeSection}>education</button>
                     </div>
                 </div>
+                <div className="resumepage__scrollbar-mobile">
+                    <button class="resumepage__button-active" onClick={props.scrollToResumeSectionMobile} data-section="objective">obj</button>
+                    <button onClick={props.scrollToResumeSectionMobile} data-section="skills">skills</button>
+                    <button onClick={props.scrollToResumeSectionMobile} data-section="work-experience">exp</button>
+                    <button onClick={props.scrollToResumeSectionMobile} data-section="education">edu</button>
+                </div>
                 <div className="resumepage__interactive-body">
 
                     <div className="resumepage__objective">
@@ -41,6 +47,9 @@ const ResumePage = (props) => (
                             <button onClick={(e) => props.showSkill(e, 'web dev')}>web dev</button>
                             <button onClick={(e) => props.showSkill(e, 'data')}>data</button>
                             <button onClick={(e) => props.showSkill(e, 'devops')}>devops</button>
+                        </div>
+                        <div className="resumepage__skilldropdown">
+                            select goes here
                         </div>
 
                         <div className="resumepage__skills-body">
@@ -118,36 +127,44 @@ const ResumePage = (props) => (
                         <div className="resumepage__anchor" id="work-experience"></div>
                         <h3>Work Experience</h3>
                         <p className="resumepage__experience-linkall"><a href="" id="all" onClick={props.toggleExpandExperience}>Expand All</a></p>
-                        {
-                            props.work_experience.map((workexp) => {
-                                return (<WorkExperience 
-                                        position={workexp.position} 
-                                        company_href={workexp.company.href}
-                                        company_name={workexp.company.name} 
-                                        start={workexp.start_date} 
-                                        end={workexp.end_date} 
-                                        work_experience={workexp.work_experience}
-                                        toggleExpandExperience={props.toggleExpandExperience} 
-                                    />
-                                )
-                            })
-                        }           
+                        <div className="resumepage__experience-container">
+                            {
+                                props.work_experience.map((workexp) => {
+                                    return (<WorkExperience 
+                                            position={workexp.position} 
+                                            company_href={workexp.company.href}
+                                            company_name={workexp.company.name} 
+                                            start={workexp.start_date} 
+                                            end={workexp.end_date} 
+                                            work_experience={workexp.work_experience}
+                                            toggleExpandExperience={props.toggleExpandExperience} 
+                                        />
+                                    )
+                                })
+                            }
+                        </div>           
                     </div>
                     
                     <div className="resumepage__education">
                         <div className="resumepage__anchor" id="education"></div>
                         <h3>Education</h3>
-                        <h4>College</h4>
-                        <div className="resumepage__education-body">
-                            <p><span>Bachelor of Science - Computer Engineering</span></p>
-                            <a href="https://twin-cities.umn.edu/">University of Minnesota – Twin Cities</a>
-                            <p>Graduated Fall 2015</p>
-                        </div>
-                        <h4>Certification</h4>
-                        <div className="resumepage__education-body">
-                            <p><span>Professional Scrum Master I</span></p>
-                            <a href="https://www.scrum.org">Scrum.org</a>
-                            <p>November 2018</p>
+                        <div className="resumepage__education-container">
+                            <div className="resumepage__college">
+                                <h4>College</h4>
+                                <div className="resumepage__education-body">
+                                    <p><span>Bachelor of Science - Computer Engineering</span></p>
+                                    <a href="https://twin-cities.umn.edu/">University of Minnesota – Twin Cities</a>
+                                    <p>Graduated Fall 2015</p>
+                                </div>
+                            </div>
+                            <div className="resumepage__cert">
+                                <h4>Certification</h4>
+                                <div className="resumepage__education-body">
+                                    <p><span>Professional Scrum Master I</span></p>
+                                    <a href="https://www.scrum.org">Scrum.org</a>
+                                    <p>November 2018</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

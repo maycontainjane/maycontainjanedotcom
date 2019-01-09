@@ -120,6 +120,14 @@ class PortfolioSite extends React.Component {
         document.getElementById(id).scrollIntoView({behavior: "smooth"});
     }
 
+    scrollToResumeSectionMobile(elem) {
+        jQuery('.resumepage__scrollbar-mobile button').removeClass('resumepage__button-active');
+        jQuery(elem.target).addClass('resumepage__button-active');
+        var id = jQuery(elem.target).attr("data-section");
+        console.log(id);
+        document.getElementById(id).scrollIntoView({behavior: "smooth"});
+    }
+
     showSkill(elem, show) {
         jQuery('.resumepage__skillbuttons button').removeClass('resumepage__button-active');
         jQuery(elem).addClass("resumepage__button-active");
@@ -188,6 +196,7 @@ class PortfolioSite extends React.Component {
                     skills={skills_json} 
                     toggleExpandExperience={this.toggleExpandExperience} 
                     scrollToResumeSection={this.scrollToResumeSection}
+                    scrollToResumeSectionMobile={this.scrollToResumeSectionMobile}
                     showSkill={this.showSkill}
                     skillSelection={this.state.skillSelection}
                 />

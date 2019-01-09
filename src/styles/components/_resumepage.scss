@@ -1,9 +1,7 @@
-//orig: 213 lines
-
 // ==================== general styling ==================== // 
 
 .resumepage__body {
-    padding: $xl-size $xl-size*2;
+    padding: $xl-size $xl-size;
 }
 
 .resumepage__body h2 {
@@ -101,7 +99,7 @@
     background: none;
     border: none;
     height: auto;
-    padding: $s-size $s-size;
+    padding: $s-size;
     font-size: $xs-font;
     width: 17rem;
 }
@@ -110,6 +108,10 @@
     background-color: rgba(244, 244, 255, 0.7);
     color: $main-purple;
     border-radius: $xs-size;
+}
+
+.resumepage__scrollbar-mobile {
+    display: none;
 }
 
 // anchor for scrollbar neads some space from top due to nav
@@ -122,7 +124,6 @@
 
 .resumepage__skillbuttons {
     display: flex;
-    //justify-content: space-around;
     background-image: url('/img/bg/button.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -151,6 +152,10 @@
     background-color: rgba(244, 244, 255, 0.7) !important;
     border-radius: $xs-size;
     color: $main-purple;
+}
+
+.resumepage__skilldropdown {
+    display: none;
 }
 
  // ========= skills section styling ========= //
@@ -197,3 +202,193 @@
 .resumepage__downloadresume button {
     margin-top: $m-size;
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .resumepage__body {
+        padding: $m-size $s-size;
+    }
+
+    .resumepage__downloadable {
+        margin: $l-size 0;
+    }
+
+    .resumepage__skills-body {
+        display: grid;
+        grid-template-rows: 30% 5% 30% 5% 30%;
+        grid-template-columns: none;
+    }
+
+    .resumepage__skills-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .resumepage__skills-item {
+        padding: $xs-size $teeny-size;
+        margin: $teeny-size;
+        text-align: center;
+        width: $xl-size*1.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resumepage__scrollbar-container {
+        padding: 0;
+    }
+
+    .resumepage__scrollbar {
+        position: sticky;
+        top: $xl-size+$m-size;
+    }
+    
+    .resumepage__scrollbar button {
+        background: none;
+        border: none;
+        height: auto;
+        font-size: 12pt;
+        width: 12rem;
+    }
+    
+    .resumepage__scrollbar button:hover {
+        background-color: rgba(244, 244, 255, 0.7);
+        color: $main-purple;
+        border-radius: $xs-size;
+    }
+
+    .resumepage__skillbuttons button {
+        background: none;
+        border: none;
+        font-size: $teeny-font;
+        padding: $teeny-size;
+        width: auto;
+        height: auto;
+        flex-grow: 1;
+    }
+
+    .resumepage__interactive-body {
+        padding: 0 $m-size;
+    }
+}
+
+/* two column goodness */
+@media only screen and (min-width: 960px) {
+    .resumepage__experience-container, .resumepage__education-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .resumepage__scrollbar {
+        display: none;
+    }
+
+    .resumepage__body {
+        padding: $m-size $xs-size;
+    }
+
+    .resumepage__downloadable {
+        margin: $l-size 0;
+    }
+
+    .resumepage__skills-body {
+        display: grid;
+        grid-template-rows: 30% 5% 30% 5% 30%;
+        grid-template-columns: none;
+    }
+
+    .resumepage__skills-item {
+        padding: $xs-size $teeny-size;
+        margin: $teeny-size;
+        text-align: center;
+        width: $xl-size*1.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resumepage__scrollbar-container {
+        padding: 0;
+    }
+
+    .resumepage__scrollbar-mobile {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgba(170, 164, 244, 0.5);
+        background-image: url('/img/bg/button.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 5px solid $light-grey;
+        border-radius: $s-size;
+        margin-top: $s-size;
+        position: sticky;
+        top: $xl-size+$m-size;
+    }
+    
+    .resumepage__scrollbar-mobile button {
+        background: none;
+        border: none;
+        height: auto;
+        padding: $xs-size;
+        font-size: 10pt;
+        width: auto;
+    }
+    
+    .resumepage__scrollbar-mobile button:hover {
+        background-color: rgba(244, 244, 255, 0.7);
+        color: $main-purple;
+        border-radius: $xs-size;
+    }
+
+    .resumepage__skills-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .resumepage__skillbuttons {
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+        background: none;
+    }
+
+    .resumepage__skillbuttons button {
+        background: none;
+        border: 3px solid $light-grey;
+        border-radius: $s-size;
+        font-size: 10pt;
+        padding: $xs-size;
+        margin: $xs-size;
+        width: auto;
+        height: auto;
+        flex-grow: 1;
+    }
+
+    .resumepage__skillbuttons button:hover {
+        border-radius: $s-size;
+    }
+
+    .resumepage__interactive {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resumepage__interactive-body {
+        padding: 0 $xs-size;
+    }
+}
+
+/* sad */
+@media only screen and (min-width: 315px) and (max-width: 325px) {
+    .resumepage__skills-list {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
