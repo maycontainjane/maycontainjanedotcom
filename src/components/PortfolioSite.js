@@ -98,7 +98,6 @@ class PortfolioSite extends React.Component {
         for (var elem in this.elements) {
             var elem_id = this.elements[elem];
             if (this.elementIsInSight(this.elements[elem]) && (window.location.pathname !== elem_id)) {
-                console.log("pushing");
                 jQuery(".nav__links a").removeClass();
                 jQuery(".nav__links a[href='"+(elem_id === 'home' ? '' : elem_id)+"']").addClass("nav__scroll");
                 /* black magic that changes the url! */
