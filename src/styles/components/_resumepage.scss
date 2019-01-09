@@ -32,6 +32,10 @@
     text-align: center;
 }
 
+.resumepage__experience {
+    padding-right: $l-size;
+}
+
 .resumepage__experience p, .resumepage__education p {
     margin: $teeny-size 0;
     font-size: $xs-font;
@@ -208,6 +212,10 @@
         padding: $m-size $s-size;
     }
 
+    .resumepage__experience {
+        padding-right: 0;
+    }
+
     .resumepage__downloadable {
         margin: $l-size 0;
     }
@@ -240,6 +248,7 @@
 
     .resumepage__scrollbar {
         position: sticky;
+        -webkit-position: sticky;
         top: $xl-size+$m-size;
     }
     
