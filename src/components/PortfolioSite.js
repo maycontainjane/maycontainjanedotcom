@@ -1,4 +1,6 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+
 
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
@@ -214,4 +216,4 @@ class PortfolioSite extends React.Component {
     );
 }
 
-export default PortfolioSite;
+export default withRouter(PortfolioSite);
