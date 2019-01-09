@@ -11,8 +11,8 @@ body {
     background-attachment: fixed;
 }
 
-// purple visited links are ugly
-a:visited {
+// no. purple. links.
+a:visited, a:hover, a:active {
    color: inherit;
 }
 
