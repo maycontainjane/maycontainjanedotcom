@@ -10,14 +10,14 @@ const ResumePage = (props) => (
             <div className="resumepage__interactive">
                 <div className="resumepage__scrollbar-container">
                     <div className="resumepage__scrollbar">
-                        <button class="resumepage__button-active" onClick={props.scrollToResumeSection}>objective</button>
+                        <button className="resumepage__button-active" onClick={props.scrollToResumeSection}>objective</button>
                         <button onClick={props.scrollToResumeSection}>skills</button>
                         <button onClick={props.scrollToResumeSection}>work experience</button>
                         <button onClick={props.scrollToResumeSection}>education</button>
                     </div>
                 </div>
                 <div className="resumepage__scrollbar-mobile">
-                    <button class="resumepage__button-active" onClick={props.scrollToResumeSectionMobile} data-section="objective">obj</button>
+                    <button className="resumepage__button-active" onClick={props.scrollToResumeSectionMobile} data-section="objective">obj</button>
                     <button onClick={props.scrollToResumeSectionMobile} data-section="skills">skills</button>
                     <button onClick={props.scrollToResumeSectionMobile} data-section="work-experience">exp</button>
                     <button onClick={props.scrollToResumeSectionMobile} data-section="education">edu</button>
@@ -28,11 +28,11 @@ const ResumePage = (props) => (
                         <div className="resumepage__anchor" id="objective"></div>
                         <h3>Objective</h3>
                         <p className="resumepage__body-objective">
-                            I am seeking a software engineering position where I can apply my 
-                            knowledge of Agile development and passion for finding creative solutions 
-                            to technical problems. I carry 4 years of industry experience with a 
-                            specialty in testing, scripting, and web development and a strong desire 
-                            to learn new things.
+                            I am looking for a new position in the software development world doing
+                            front-end or full-stack web development. I have 6+ years of software industry
+                            experience overall and 3+ years combined in professional and personal web development. 
+                            I love being part of dynamic teams and learning new things, as well as passing
+                            my knowledge on to others.
                         </p> 
                     </div>
 
@@ -60,7 +60,7 @@ const ResumePage = (props) => (
                                     props.skills.map((skill) => {
                                         if ((skill.skill_level >= ((10/3)*2))) {
                                             if ((props.skillSelection === 'all') || (skill.categories.includes(props.skillSelection))) {
-                                                return (<div 
+                                                return (<div key={skill.title}
                                                             className="resumepage__skills-item" 
                                                             data-categories={skill.categories} 
                                                             title={"skill level: "+skill.skill_level+"/10"}>
@@ -83,7 +83,7 @@ const ResumePage = (props) => (
                                     props.skills.map((skill) => {
                                         if ((((10/3)*2) > skill.skill_level) && (skill.skill_level >= (10/3))) {
                                             if ((props.skillSelection === 'all') || (skill.categories.includes(props.skillSelection))) {
-                                                return (<div 
+                                                return (<div key={skill.title} 
                                                             className="resumepage__skills-item" 
                                                             data-categories={skill.categories} 
                                                             title={"skill level: "+skill.skill_level+"/10"}>
@@ -106,7 +106,7 @@ const ResumePage = (props) => (
                                     props.skills.map((skill) => {
                                         if ((skill.skill_level < (10/3))) {
                                             if ((props.skillSelection === 'all') || skill.categories.includes(props.skillSelection)) {
-                                                return (<div 
+                                                return (<div key={skill.title}
                                                             className="resumepage__skills-item" 
                                                             data-categories={skill.categories} 
                                                             title={"skill level: "+skill.skill_level+"/10"}>
@@ -130,7 +130,7 @@ const ResumePage = (props) => (
                         <div className="resumepage__experience-container">
                             {
                                 props.work_experience.map((workexp) => {
-                                    return (<WorkExperience 
+                                    return (<WorkExperience key={workexp.start_date}
                                             position={workexp.position} 
                                             company_href={workexp.company.href}
                                             company_name={workexp.company.name} 
@@ -185,7 +185,7 @@ const WorkExperience = (props) => (
         <p className="resumepage__experience-link"><a href="" id={props.start.replace(" ", "_")} onClick={props.toggleExpandExperience}>work responsibilities ></a></p>
         <ul hidden className="resumepage__experience-ul" id={props.start.replace(" ", "_")+"_ul"}>
         { props.work_experience.map((exp) => {
-            return (<li>{exp}</li>)
+            return (<li key={exp}>{exp}</li>)
         }) }
         </ul>
     </div>

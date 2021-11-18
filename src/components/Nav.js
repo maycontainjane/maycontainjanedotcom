@@ -1,5 +1,6 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Nav = (props) => (
     <div className="nav">
@@ -7,20 +8,20 @@ const Nav = (props) => (
             <NavLink to="/"><img className="desktop" width="300px" src="/img/logo.png" /><img className="mobile" width="75px" src="/img/favicon.png" /></NavLink>
         </div>
         <div className="nav__links">
-            <NavLink to="/" activeClassName="nav__active-link" exact={true}>home</NavLink>
-            <NavLink to="/resume" activeClassName="nav__active-link">resume</NavLink>
-            <NavLink to="/me" activeClassName="nav__active-link">about</NavLink>
-            <NavLink to="/contact" activeClassName="nav__active-link">find me</NavLink>
+            <Link to="/" className="nav__link nav__active-link">home</Link>
+            <Link to="/resume" className="nav__link">resume</Link>
+            <Link to="/me" className="nav__link">about</Link>
+            <Link to="/contact" className="nav__link">find me</Link>
             <div className="nav__dropdown-container mobile">
                 <button onClick={props.selectMenu} className="nav__dropdown">{props.transformPath(window.location.pathname)} &or; </button>
             </div>
         </div>
         <div className="nav__list">
             <ul>
-                <li className="nav__list-selected"><NavLink to="/" activeClassName="nav__active-link" exact={true}>home</NavLink></li>
-                <li id="nav__resume"><NavLink to="/resume" activeClassName="nav__active-link">resume</NavLink></li>
-                <li id="nav__me"><NavLink to="/me" activeClassName="nav__active-link">me</NavLink></li>
-                <li id="nav__contact"><NavLink to="/contact" activeClassName="nav__active-link">find me</NavLink></li>
+                <li className="nav__list-selected"><NavLink to="/" className="nav__active-link">home</NavLink></li>
+                <li id="nav__resume"><NavLink to="/resume">resume</NavLink></li>
+                <li id="nav__me"><NavLink to="/me" >about</NavLink></li>
+                <li id="nav__contact"><NavLink to="/contact">find me</NavLink></li>
             </ul>
         </div>
         <div className="nav__shadow">

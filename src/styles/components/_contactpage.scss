@@ -6,6 +6,15 @@
     color: $light-grey;
 }
 
+.contactpage__body h2 {
+    text-align: center;
+    font-size: $l-font;
+    color: $near-black;
+    text-decoration: underline dashed;
+    font-family: $sans-serif;
+    margin-bottom: 0;
+}
+
 .contactpage__buttons {
     display: flex;
     justify-content: space-evenly;
@@ -76,6 +85,10 @@
     .contactpage__buttons {
         flex-direction: column;
         margin-bottom: $s-size;
+        text-align: center;
+    }
+
+    .contactpage__message {
         text-align: center;
     }
 

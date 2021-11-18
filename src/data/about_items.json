@@ -1,7 +1,7 @@
 [{
     "src": "/img/icons/dog.svg",
-    "text": "I live for my dog.",
-    "subtext": "His name is Chance and he’s a monster."
+    "text": "I live for my dogs.",
+    "subtext": "Sweet Mocha and devious Chance, both cute as can be."
 }, {
     "src": "/img/icons/pencil.svg",
     "text": "I love to write and draw.",
@@ -11,13 +11,13 @@
     "text": "I play and write music.",
     "subtext": "90's emo and pop punk has my soul."
 }, {
-    "src": "/img/icons/weight.svg",
-    "text": "The only sport I do is lifting heavy things.",
-    "subtext": "Okay, fine, they’re not that heavy."
+    "src": "/img/icons/skateboard.svg",
+    "text": "I'm a huge fan of all things skateboarding.",
+    "subtext": "Not to brag, but I can ollie a broom handle."
 }, {
     "src": "/img/icons/scissors.svg",
     "text": "I really like working with my hands.",
-    "subtext": "The proof is in the craft graveyard that is my downstairs closet."
+    "subtext": "The proof is in the craft graveyard that is my upstairs closet."
 }, {
     "src": "/img/icons/planet.svg",
     "text": "Space is my aesthetic.",

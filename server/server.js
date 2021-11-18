@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const favicon = require('express-favicon');
+const nodemailer = require('nodemailer');
 
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;

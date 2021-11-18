@@ -1,6 +1,4 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-
 
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
@@ -8,6 +6,8 @@ import Footer from './Footer';
 import HomePage from './HomePage';
 import Nav from './Nav';
 import ResumePage from './ResumePage';
+
+import { useNavigate } from 'react-router-dom';
 
 /* json files for populating the website */
 const aboutitems_json = require('../data/about_items.json');
@@ -230,9 +230,9 @@ class PortfolioSite extends React.Component {
                 <Footer year={new Date().getFullYear()}/>
             </div>
             {/*nav loaded last so it displays over everything else*/}
-            <Nav selectMenu={this.selectMenu} transformPath={this.transformPath}/>
+            <Nav selectMenu={this.selectMenu} transformPath={this.transformPath} scrollToRoute={this.scrollToRoute}/>
         </div>
     );
 }
 
-export default withRouter(PortfolioSite);
+export default PortfolioSite;

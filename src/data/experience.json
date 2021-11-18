@@ -1,10 +1,10 @@
 [{
     "position": "Software Test Engineer",
     "company": { 
-        "name": "Cray Inc.", 
-        "href": "https://www.cray.com/" 
+        "name": "Cray Inc. (Acq. by Hewlett-Packard Enterprise, 2019)", 
+        "href": "https://www.hpe.com/us/en/compute/hpc.html" 
     },
-    "start_date": "January 2015",
+    "start_date": "January 2016",
     "end_date": "Present",
     "work_experience": [
         "Worked on feature and system testing using Python and Bash scripting in conjunction with internally developed testing harness",
@@ -17,7 +17,7 @@
     "position": "Software Engineering Intern",
     "company": { 
         "name": "Cray Inc.", 
-        "href": "https://www.cray.com/"
+        "href": "https://en.wikipedia.org/wiki/Cray"
     },
     "start_date": "June 2015",
     "end_date": "December 2015",

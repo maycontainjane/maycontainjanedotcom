@@ -8,7 +8,7 @@ const AboutPage = (props) => (
         <div className="aboutpage__body">
         {
             props.aboutitems.map((about) => {
-                return <AboutItem imgsrc={about.src} text={about.text} subtext={about.subtext}/>
+                return <AboutItem key={about.text} imgsrc={about.src} text={about.text} subtext={about.subtext}/>
             })
         }
         </div>

@@ -84,7 +84,7 @@
 .resumepage__scrollbar {
     display: flex;
     flex-direction: column;
-    background-image: url('/img/bg/button.png');
+    background-image: url('/src/assets/img/bg/button.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -124,7 +124,7 @@
 
 .resumepage__skillbuttons {
     display: flex;
-    background-image: url('/img/bg/button.png');
+    background-image: url('/src/assets/img/bg/button.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -322,7 +322,7 @@
         display: flex;
         justify-content: space-evenly;
         background-color: rgba(170, 164, 244, 0.5);
-        background-image: url('/img/bg/button.png');
+        background-image: url('/src/assets/img/bg/button.png');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;

@@ -18,7 +18,7 @@ a:visited, a:hover, a:active {
 
 button {
     cursor: pointer;
-    background: url("/img/bg/button.png");
+    background: url("/src/assets/img/bg/button.png");
     background-size: 100% 100%;
     font-family: $sans-serif;
     font-size: $s-font;
@@ -30,7 +30,7 @@ button {
 }
 
 button:hover {
-    background: url('/img/bg/button-dark.png');
+    background: url('/src/assets/img/bg/button-dark.png');
     background-size: 100% 100%;
     color: darken($accent-color, 5%);
     font-weight: bold;
